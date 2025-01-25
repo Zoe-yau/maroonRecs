@@ -3,9 +3,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
 	<title> Maroon Reviews </title>
 
@@ -19,9 +17,12 @@
         }
 
 		.heading {
-            font-family: "Lilita One";
-            color: maroon;
+            font-family: "Space Grotesk", serif;
+            font-style: normal;
+            font-weight: 400;
             font-size: 100px;
+            font-display: swap;
+            color:  #420303;
             text-align: center;
             position: relative;
         
@@ -37,26 +38,29 @@
         #searchButton {
          position: absolute;
          left: 10;  
-         bottom: 50%;
-         top: 50%;
+         top: 30%;
+
         }
 
         #profButton {
             position: absolute; 
             right: 10;
-            bottom: 50%;
-            top: 50%;
+            top: 30%;
+
         }
 
         .button {
-            background-color: maroon;
+            background-color: #420303;
             border: none;
-            padding: 50px;
+            padding: 30px;
             color: white;
             text-align: center;
             margin: 0;
-            width: 45%;
-            border-radius: 8px;
+            width: 40%;
+            border-radius: 16px;
+            text-decoration: none;
+            font-family: "Space Grotesk", serif;
+
         }
 
 
@@ -66,10 +70,10 @@
 
 	<body>
         
-        <div class="heading"> MAROON REIVEWS </div>
+        <div class="heading"> MAROON REVIEWS </div>
 
         <a href="classSearch.html" class="button" id="searchButton"> Class Search </a>
-        <button a href="" class="button" id="profButton"> Professor Selection </button>
+        <a href="classesPage.html" class="button" id="profButton"> Professor Selection </a>
 
 
         <img class="bottomImage" src="Images/missRevremovebg.png" alt="Rev" width="200px;"  height="200px;">
