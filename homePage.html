@@ -1,23 +1,72 @@
 <html>
 <head>
-	<title>
-		Maroon Reviews 
-	</title>
+	<title> Maroon Reviews </title>
 
 	<style>
-		#heading {
+
+        body {
+            background-image: url("Images/AMBack.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+
+		.heading {
             font-family: 'Courier New', Courier, monospace;
             color: maroon;
-            font-size: 50px;
+            font-size: 100px;
             text-align: center;
+            position: relative;
+        
         }
+
+        .bottomImage {
+            position: absolute;
+            bottom: -30px;
+            right: 50%;
+            left: 40%;
+        }
+
+        #searchButton {
+         position: absolute;
+         left: 10;  
+         bottom: 50%;
+         top: 50%;
+        }
+
+        #profButton {
+            position: absolute; 
+            right: 10;
+            bottom: 50%;
+            top: 50%;
+        }
+
+        .button {
+            background-color: maroon;
+            border: none;
+            padding: 50px;
+            color: white;
+            text-align: center;
+            margin: 0;
+            width: 45%;
+            border-radius: 8px;
+        }
+
+
 	</style>
 
 </head>
 
 	<body>
-		<p id="heading"> Maroon Reviews </p> 
-		<p> Two buttons </p>
-	
+        
+        <div class="heading"> Maroon Reviews </div>
+
+        <button a href="" class="button" id="searchButton"> Class Search </button>
+        <button a href="" class="button" id="profButton"> Professor Selection </button>
+
+
+        <img class="bottomImage" src="Images/missRevremovebg.png" alt="Rev" width="200px;"  height="200px;">
+
+
 	</body>
 </html>
