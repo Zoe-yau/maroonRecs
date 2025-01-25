@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Box with Background</title>
   <style>
+
     body {
       margin: 0;
       padding: 0;
-      background-image: url('Images/s.png'); 
-      background-size: cover; 
-      background-repeat: no-repeat; 
+      background-image: url('Images/s.png');
+      background-size: cover;
+      background-repeat: no-repeat;
       transform: translateY(50px);
-      background-position: center top; 
+      background-position: center top;
     }
 
     .search-container {
+      width: 400px;
       position: absolute;
       top: 20px;
-      left: 20px;
+      right: 20px;
     }
 
     .search-input {
@@ -46,16 +49,14 @@
     .search-button:hover {
       background: rgba(255, 255, 255, 0.2);
     }
+
   </style>
 </head>
+
 <body>
+
   <div class="search-container">
-    <input
-      type="text"
-      id="searchInput"
-      class="search-input"
-      placeholder="Type your search here..."
-    />
+    <input type="text" id="searchInput" class="search-input" placeholder="Type your search here..." />
     <button class="search-button" onclick="performSearch()">Search</button>
   </div>
 
@@ -71,5 +72,5 @@
     }
   </script>
 </body>
-</html>
 
+</html>
