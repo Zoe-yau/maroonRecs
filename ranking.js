@@ -174,18 +174,21 @@ const data = [
   { section: "CYBR-602-601", A: 12, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "DEWITTE P" },
 ];
 
-// Ranking algorithm
-data.forEach((professor) => {
-  // Calculate a score to rank professors
-  professor.totalStudents = professor.A + professor.B + professor.C + professor.D + professor.F;
-  professor.score =
-    professor.GPA * 10 - professor.Q + professor.A * 0.1 - (professor.B + professor.C + professor.D + professor.F) * 0.05;
+// Sorting logic
+const rankedData = data.sort((a, b) => {
+  if (b.GPA !== a.GPA) {
+    return b.GPA - a.GPA; // Rank by GPA first
+  }
+  if (a.Q !== b.Q) {
+    return a.Q - b.Q; // Rank by fewer Q-Drops second
+  }
+  // Rank by grades (more A's, fewer B-F's)
+  const aGradeTotal = a.A * 4 + a.B * 3 + a.C * 2 + a.D * 1 + a.F * 0;
+  const bGradeTotal = b.A * 4 + b.B * 3 + b.C * 2 + b.D * 1 + b.F * 0;
+  return bGradeTotal - aGradeTotal;
 });
 
-// Sort the data by the score (higher is better)
-const rankedData = data.sort((a, b) => b.score - a.score);
-
-// Add the ranked data to the HTML
+// Display the ranked data in the HTML
 rankedData.forEach((professor, index) => {
   // Create a new child div for each professor
   const infoDiv = document.createElement("div");
@@ -195,11 +198,9 @@ rankedData.forEach((professor, index) => {
   infoDiv.innerHTML = `
         <p>Rank: ${index + 1}</p>
         <p>Instructor: ${professor.Instructor}</p>
-        <p>Section: ${professor.section}</p>
-        <p>GPA: ${professor.GPA}</p>
+        <p>Class: ${professor.section}</p>
+        <p>GPA: ${professor.GPA.toFixed(2)}</p>
         <p>Q-Drops: ${professor.Q}</p>
-        <p>Total Students: ${professor.totalStudents}</p>
-        <p>Score: ${professor.score.toFixed(2)}</p>
     `;
 
   // Append the child div to the parent div
