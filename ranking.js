@@ -166,7 +166,7 @@
 
 const output = document.querySelector("#output");
 
-// Step 1: Parse raw data
+// Raw data (ENGR 102 courses only)
 const rawData = `
 ENGR-102-201 24
  64.86%
@@ -212,8 +212,64 @@ ENGR-102-207 35
  0
  0.00%
  42 3.833 0 0 0 0 0 42 MCKENZIE J
+ENGR-102-208 34
+ 79.07%
+ 6
+ 13.95%
+ 3
+ 6.98%
+ 0
+ 0.00%
+ 0
+ 0.00%
+ 43 3.720 0 0 0 0 0 43 ELMS R
+ENGR-102-209 27
+ 77.14%
+ 7
+ 20.00%
+ 1
+ 2.86%
+ 0
+ 0.00%
+ 0
+ 0.00%
+ 35 3.742 0 0 0 0 0 35 ELMS R
+ENGR-102-210 26
+ 81.25%
+ 5
+ 15.63%
+ 1
+ 3.13%
+ 0
+ 0.00%
+ 0
+ 0.00%
+ 32 3.781 0 0 0 0 0 32 MORRIS E
+ENGR-102-216 31
+ 70.45%
+ 12
+ 27.27%
+ 0
+ 0.00%
+ 0
+ 0.00%
+ 1
+ 2.27%
+ 44 3.636 0 0 0 0 0 44 OSTROVSKAYA N
+ENGR-102-217 34
+ 77.27%
+ 7
+ 15.91%
+ 1
+ 2.27%
+ 2
+ 4.55%
+ 0
+ 0.00%
+ 44 3.659 0 0 0 0 0 44 OSTROVSKAYA N
 `;
 
+// Parse ENGR-102 data
 const parseData = (data) => {
   const lines = data.trim().split("\n");
   const parsedData = [];
@@ -225,14 +281,12 @@ const parseData = (data) => {
 
       parsedData.push({
         course: courseLine[0],
-        totalStudents: parseInt(courseLine[1]),
         percentageA: parseFloat(lines[i + 1].replace("%", "")) || 0,
         percentageB: parseFloat(lines[i + 2].replace("%", "")) || 0,
         percentageC: parseFloat(lines[i + 3].replace("%", "")) || 0,
         percentageD: parseFloat(lines[i + 4].replace("%", "")) || 0,
         percentageF: parseFloat(lines[i + 5].replace("%", "")) || 0,
         gpa: parseFloat(gpaLine[1]) || 0,
-        qDrops: parseInt(gpaLine[5]) || 0,
         instructor: gpaLine.slice(2).join(" ") || "Unknown",
       });
     } else {
@@ -243,59 +297,22 @@ const parseData = (data) => {
   return parsedData;
 };
 
-// Step 2: Calculate a ranking score
-const calculateScore = (professor) => {
-  const gradeWeight = 0.6;
-  const gpaWeight = 0.3;
-  const dropPenalty = 0.1;
-
-  const gradeScore =
-    professor.percentageA +
-    professor.percentageB * 0.75 +
-    professor.percentageC * 0.5 -
-    professor.percentageD * 0.5 -
-    professor.percentageF * 1;
-
-  const gpaScore = professor.gpa;
-  const dropScore = -professor.qDrops;
-
-  return (
-    gradeWeight * gradeScore + gpaWeight * gpaScore + dropPenalty * dropScore
-  );
-};
-
-// Step 3: Sort professors by score
-const rankProfessors = (data) => {
-  return data
-    .map((professor) => ({
-      ...professor,
-      score: calculateScore(professor),
-    }))
-    .sort((a, b) => b.score - a.score);
-};
-
-// Step 4: Execute parsing, scoring, and ranking
+// Parse and display ENGR-102 courses
 const parsedData = parseData(rawData);
-const rankedProfessors = rankProfessors(parsedData);
 
-// Step 5: Display rankings in the DOM
-rankedProfessors.forEach((professor, index) => {
+parsedData.forEach((professor) => {
   const infoDiv = document.createElement("div");
-  infoDiv.className = "professor-info"; // Optional class for styling
+  infoDiv.className = "professor-info";
 
   infoDiv.innerHTML = `
     <h3>Course: ${professor.course}</h3>
-    <p><strong>Rank:</strong> ${index + 1}</p>
     <p><strong>Instructor:</strong> ${professor.instructor}</p>
-    <p><strong>Total Students:</strong> ${professor.totalStudents}</p>
     <p><strong>Percentage A:</strong> ${professor.percentageA}%</p>
     <p><strong>Percentage B:</strong> ${professor.percentageB}%</p>
     <p><strong>Percentage C:</strong> ${professor.percentageC}%</p>
     <p><strong>Percentage D:</strong> ${professor.percentageD}%</p>
     <p><strong>Percentage F:</strong> ${professor.percentageF}%</p>
     <p><strong>GPA:</strong> ${professor.gpa.toFixed(2)}</p>
-    <p><strong>Q-Drops:</strong> ${professor.qDrops}</p>
-    <p><strong>Score:</strong> ${professor.score.toFixed(2)}</p>
   `;
 
   output.appendChild(infoDiv);
