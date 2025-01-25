@@ -172,6 +172,16 @@ const data = [
   { section: "CYBR-405-500", A: 45, B: 0, C: 1, D: 0, F: 0, GPA: 3.956, Q: 1, Instructor: "PRICE P" },
   { section: "CYBR-601-600", A: 14, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "ROMERO J" },
   { section: "CYBR-602-601", A: 12, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "DEWITTE P" },
+  { section: "AERO-201-200", A: 11, B: 5, C: 2, D: 0, F: 0, GPA: 3.5, Q: 0, Instructor: "BHARGAVA D" },
+  { section: "AERO-201-501", A: 14, B: 13, C: 7, D: 0, F: 2, GPA: 3.027, Q: 0, Instructor: "BHARGAVA D" },
+  { section: "AERO-201-502", A: 6, B: 28, C: 7, D: 0, F: 0, GPA: 2.975, Q: 0, Instructor: "SIDDIQUI F" },
+  { section: "AERO-202-503", A: 10, B: 5, C: 3, D: 1, F: 0, GPA: 3.2, Q: 0, Instructor: "SIDDIQUI F" },
+  { section: "AERO-202-504", A: 20, B: 10, C: 5, D: 0, F: 0, GPA: 3.6, Q: 1, Instructor: "MOBLE B" },
+  { section: "AERO-203-505", A: 18, B: 12, C: 4, D: 0, F: 0, GPA: 3.8, Q: 1, Instructor: "MOBLE B" },
+  { section: "AERO-204-506", A: 22, B: 8, C: 6, D: 0, F: 0, GPA: 3.7, Q: 0, Instructor: "SANJUAN MUNOZ J" },
+  { section: "AERO-205-507", A: 12, B: 5, C: 2, D: 0, F: 0, GPA: 3.1, Q: 0, Instructor: "DOGARIU A" },
+  { section: "AERO-206-508", A: 15, B: 10, C: 3, D: 0, F: 0, GPA: 3.4, Q: 0, Instructor: "DOGARIU A" },
+  { section: "AERO-207-509", A: 8, B: 9, C: 4, D: 1, F: 0, GPA: 2.9, Q: 0, Instructor: "SINGH N" },
 ];
 
 // Sorting logic
