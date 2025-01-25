@@ -15,17 +15,61 @@
       background-position: center top; 
     }
 
-    .search {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 40px;
+    .search-container {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      color: white; /* Adjust text color for better contrast with the background */
+      top: 20px;
+      left: 20px;
+    }
+
+    .search-input {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 20px;
+      padding: 5px;
+      border: 2px solid white;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+    }
+
+    .search-button {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 20px;
+      padding: 5px 10px;
+      margin-left: 5px;
+      border: 2px solid white;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      cursor: pointer;
+    }
+
+    .search-button:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
-  <div class="search">Search</div>
+  <div class="search-container">
+    <input
+      type="text"
+      id="searchInput"
+      class="search-input"
+      placeholder="Type your search here..."
+    />
+    <button class="search-button" onclick="performSearch()">Search</button>
+  </div>
+
+  <script>
+    function performSearch() {
+      const searchTerm = document.getElementById("searchInput").value;
+      if (searchTerm.trim() !== "") {
+        console.log(`Searching for: ${searchTerm}`);
+        alert(`You searched for: ${searchTerm}`);
+      } else {
+        alert("Please enter a search term.");
+      }
+    }
+  </script>
 </body>
 </html>
+
