@@ -182,6 +182,15 @@ const data = [
   { section: "AERO-205-507", A: 12, B: 5, C: 2, D: 0, F: 0, GPA: 3.1, Q: 0, Instructor: "DOGARIU A" },
   { section: "AERO-206-508", A: 15, B: 10, C: 3, D: 0, F: 0, GPA: 3.4, Q: 0, Instructor: "DOGARIU A" },
   { section: "AERO-207-509", A: 8, B: 9, C: 4, D: 1, F: 0, GPA: 2.9, Q: 0, Instructor: "SINGH N" },
+  { section: "AERO-303-501", A: 32, B: 33, C: 13, D: 0, F: 0, GPA: 3.243, Q: 0, Instructor: "GUHATHAKURTA S" },
+  { section: "AERO-304-200", A: 2, B: 14, C: 4, D: 0, F: 0, GPA: 2.9, Q: 0, Instructor: "BENZERGA A" },
+  { section: "AERO-304-500", A: 14, B: 34, C: 20, D: 2, F: 0, GPA: 2.857, Q: 0, Instructor: "BENZERGA A" },
+  { section: "AERO-304-501", A: 32, B: 25, C: 7, D: 0, F: 2, GPA: 3.287, Q: 5, Instructor: "LE GRAVEREND J" },
+  { section: "AERO-306-500", A: 77, B: 1, C: 1, D: 1, F: 2, GPA: 3.829, Q: 1, Instructor: "STROUBOULIS T" },
+  { section: "AERO-307-900", A: 24, B: 1, C: 0, D: 0, F: 0, GPA: 3.96, Q: 0, Instructor: "LE GRAVEREND J" },
+  { section: "AERO-307-901", A: 15, B: 3, C: 3, D: 1, F: 0, GPA: 3.454, Q: 0, Instructor: "LE GRAVEREND J" },
+  { section: "AERO-307-904", A: 18, B: 6, C: 1, D: 0, F: 0, GPA: 3.68, Q: 0, Instructor: "LE GRAVEREND J" },
+  { section: "AERO-307-906", A: 11, B: 9, C: 2, D: 0, F: 0, GPA: 3.409, Q: 0, Instructor: "LE GRAVEREND J" },
 ];
 
 // Sorting logic
