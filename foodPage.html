@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Box with Background</title>
-  <style>
 
+  <script src="food.js" defer></script>
+  <style>
     body {
       margin: 0;
       padding: 0;
       background-image: url('Images/s.png');
       background-size: cover;
       background-repeat: no-repeat;
-      transform: translateY(50px);
       background-position: center top;
     }
 
@@ -22,7 +22,6 @@
       position: absolute;
       left: 550px;
       top: 20px;
-      right: 20px;
     }
 
     .search-input {
@@ -33,6 +32,10 @@
       border-radius: 5px;
       background: rgba(0, 0, 0, 0.5);
       color: white;
+    }
+
+    .search-input::placeholder {
+      color: white; /* Placeholder text color */
     }
 
     .search-button {
@@ -51,43 +54,31 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid white;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-family: "Courier New", Courier, monospace;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
 <body>
-
-  <style>
-    .search-input::placeholder {
-      color: white; /* Placeholder text color */
-    }
-  </style>
-  
   <div class="search-container">
-    <label for="searchInput">Enter Cuisine:</label>
+    <label for="cuisineInput">Enter Cuisine:</label>
     <input 
       type="text" 
-      id="searchInput" 
+      id="cuisineInput" 
       class="search-input" 
       placeholder="e.g., Mexican, Burgers" 
     />
-    <button class="search-button" onclick="performSearch()">Search</button>
+    <button id="searchButton" class="search-button">Search</button>
   </div>
-  
 
   <div id="output"></div>
-  
-
-  <script>
-    function performSearch() {
-      const searchTerm = document.getElementById("searchInput").value;
-      if (searchTerm.trim() !== "") {
-        console.log(`Searching for: ${searchTerm}`);
-        alert(`You searched for: ${searchTerm}`);
-      } else {
-        alert("Please enter a search term.");
-      }
-    }
-  </script>
 </body>
 
 </html>

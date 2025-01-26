@@ -1,3 +1,5 @@
+const output = document.querySelector("#output");
+
 const foodPlaces = [
     { name: "Layne's Chicken Fingers", cuisine: "Fast Food", rating: 4.6, reviewsCount: 2154, review: "Amazing chicken fingers and the secret sauce is to die for. A must-visit for Aggies!" },
     { name: "Fuego Tortilla Grill", cuisine: "Mexican", rating: 4.7, reviewsCount: 3951, review: "Best tacos in town, open 24/7. The Dr Pepper Cowboy taco is a favorite." },
