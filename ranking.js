@@ -26,6 +26,23 @@ const data = [
   { section: "AERO-307-901", A: 15, B: 3, C: 3, D: 1, F: 0, GPA: 3.454, Q: 0, Instructor: "LE GRAVEREND J" },
   { section: "AERO-307-904", A: 18, B: 6, C: 1, D: 0, F: 0, GPA: 3.68, Q: 0, Instructor: "LE GRAVEREND J" },
   { section: "AERO-307-906", A: 11, B: 9, C: 2, D: 0, F: 0, GPA: 3.409, Q: 0, Instructor: "LE GRAVEREND J" },
+  { section: "BMEN-201-901", A: 25, B: 19, C: 2, D: 0, F: 0, GPA: 3.425, Q: 0, Instructor: "HORN J" },
+  { section: "BMEN-201-902", A: 24, B: 31, C: 3, D: 0, F: 1, GPA: 3.305, Q: 0, Instructor: "HORN J" },
+  { section: "BMEN-201-903", A: 16, B: 15, C: 5, D: 0, F: 1, GPA: 3.21, Q: 0, Instructor: "HORN J" },
+  { section: "BMEN-250-200", A: 6, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "HOYT K" },
+  { section: "BMEN-250-500", A: 9, B: 2, C: 1, D: 0, F: 0, GPA: 3.666, Q: 0, Instructor: "HOYT K" },
+  { section: "BMEN-253-502", A: 58, B: 6, C: 0, D: 0, F: 0, GPA: 3.906, Q: 0, Instructor: "BUJNOCH Z" },
+  { section: "BMEN-253-503", A: 43, B: 6, C: 0, D: 0, F: 0, GPA: 3.877, Q: 0, Instructor: "BUJNOCH Z" },
+  { section: "BMEN-253-504", A: 41, B: 2, C: 0, D: 0, F: 0, GPA: 3.953, Q: 0, Instructor: "BUJNOCH Z" },
+  { section: "BMEN-311-500", A: 15, B: 12, C: 1, D: 0, F: 2, GPA: 3.266, Q: 0, Instructor: "YAKOVLEV V" },
+  { section: "BIOT-635-600", A: 17, B: 12, C: 0, D: 0, F: 0, GPA: 3.586, Q: 1, Instructor: "WOODARD S" },
+  { section: "BIOT-645-600", A: 12, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "YOUNG C" },
+  { section: "BIOT-645-601", A: 11, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "YOUNG C" },
+  { section: "BIOT-689-600", A: 17, B: 8, C: 3, D: 0, F: 0, GPA: 3.5, Q: 1, Instructor: "REEVES B" },
+  { section: "CHEN-201-500", A: 61, B: 21, C: 8, D: 0, F: 1, GPA: 3.549, Q: 2, Instructor: "HOLTZAPPLE M" },
+  { section: "CHEN-201-501", A: 11, B: 10, C: 3, D: 0, F: 0, GPA: 3.333, Q: 0, Instructor: "HOLTZAPPLE M" },
+  { section: "CHEN-201-502", A: 55, B: 5, C: 2, D: 1, F: 0, GPA: 3.809, Q: 2, Instructor: "HOLTZAPPLE M" },
+  { section: "CHEN-204-201", A: 3, B: 1, C: 1, D: 0, F: 0, GPA: 3.4, Q: 0, Instructor: "JAYARAMAN A" },
 ];
 
 // Sorting logic

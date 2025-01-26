@@ -20,6 +20,7 @@
     .search-container {
       width: 400px;
       position: absolute;
+      left: 550px;
       top: 20px;
       right: 20px;
     }
@@ -55,11 +56,23 @@
 
 <body>
 
+  <style>
+    .search-input::placeholder {
+      color: white; /* Placeholder text color */
+    }
+  </style>
+  
   <div class="search-container">
     <label for="searchInput">Enter Cuisine:</label>
-    <input type="text" id="searchInput" class="search-input" placeholder="e.g., Mexican, Burgers" />
+    <input 
+      type="text" 
+      id="searchInput" 
+      class="search-input" 
+      placeholder="e.g., Mexican, Burgers" 
+    />
     <button class="search-button" onclick="performSearch()">Search</button>
   </div>
+  
 
   <div id="output"></div>
   
