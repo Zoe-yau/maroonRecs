@@ -133,9 +133,9 @@
   </div>
 
   <div class="search-container">
-
+    <label for="locationDropdown">Filter by Cuisine:</label>
     <select id="cuisineDropdown" class="search-input">
-      <option value="">-- Select Cuisine --</option>
+      <option value=""> All </option>
       <option value="Fast Food">Fast Food</option>
       <option value="Mexican">Mexican</option>
       <option value="Mexican Fusion">Mexican Fusion</option>
@@ -152,6 +152,14 @@
       <option value="Breakfast & Brunch">Breakfast & Brunch</option>
       <option value="Pizza">Pizza</option>
     </select>
+
+    <label for="statusDropdown">Filter by Status:</label>
+        <select id="statusDropdown" class="search-input">
+            <option value="All">All</option>
+            <option value="Open">Open</option>
+            <option value="Closed">Closed</option>
+        </select>
+        
     <button id="searchButton" class="search-button">Search</button>
   </div>
 

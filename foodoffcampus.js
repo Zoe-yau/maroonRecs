@@ -107,22 +107,37 @@ const foodPlaces =
   
   document.getElementById("searchButton").addEventListener("click", () => {
     const selectedCuisine = document.getElementById("cuisineDropdown").value.trim();
+    const selectedStatus = document.getElementById("statusDropdown").value.trim(); // Get the status filter value
   
-    if (!selectedCuisine) {
-      displayPlaces(foodPlaces);
-      return;
+    let filteredPlaces = [...foodPlaces];
+  
+    // Filter by cuisine if not "All" or empty
+    if (selectedCuisine) {
+      filteredPlaces = filteredPlaces.filter(
+        place => place.cuisine.toLowerCase() === selectedCuisine.toLowerCase()
+      );
     }
   
-    const filteredPlaces = foodPlaces.filter(
-      place => place.cuisine.toLowerCase() === selectedCuisine.toLowerCase()
-    );
+    // Filter by status if "Open" or "Closed" is selected
+    if (selectedStatus === "Open" || selectedStatus === "Closed") {
+      const currentTime = new Date();
+      const currentDay = currentTime.toLocaleDateString("en-US", { weekday: "long" });
+      const currentHour = currentTime.getHours();
+      const currentMinute = currentTime.getMinutes();
   
+      filteredPlaces = filteredPlaces.filter(place => {
+        const hours = place.hours[currentDay];
+        const isOpen = checkIfOpen(hours, currentHour, currentMinute);
+        return selectedStatus === "Open" ? isOpen : !isOpen;
+      });
+    }
+  
+    // Display the filtered results or a no-results message
     if (filteredPlaces.length === 0) {
       const output = document.getElementById("output");
-      output.innerHTML = `<p style="color: white; text-align: center;">No results found for "${selectedCuisine}". Please try a different cuisine.</p>`;
+      output.innerHTML = `<p style="color: #420303; text-align: center; font-weight: bold;">No results found. Please adjust your filters.</p>`;
       return;
     }
   
     displayPlaces(filteredPlaces);
   });
-  
