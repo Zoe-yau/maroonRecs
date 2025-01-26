@@ -306,7 +306,147 @@ const foodPlaces = [
       Saturday: "Closed"
     },
     location: "Polo Garage"
-  }
+  }, 
+    {
+      name: "Panda Express",
+      cuisine: "Fast Food",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "11:00a - 8:00p",
+        Tuesday: "11:00a - 8:00p",
+        Wednesday: "11:00a - 8:00p",
+        Thursday: "11:00a - 8:00p",
+        Friday: "11:00a - 8:00p",
+        Saturday: "Closed"
+      },
+      location: "Polo Garage"
+    },
+    {
+      name: "Salata",
+      cuisine: "American",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "11:00a - 8:00p",
+        Tuesday: "11:00a - 8:00p",
+        Wednesday: "11:00a - 8:00p",
+        Thursday: "11:00a - 8:00p",
+        Friday: "11:00a - 8:00p",
+        Saturday: "Closed"
+      },
+      location: "Main Campus"
+    },
+    {
+      name: "Shake Smart",
+      cuisine: "Smoothies",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "8:00a - 8:30p",
+        Tuesday: "8:00a - 8:30p",
+        Wednesday: "8:00a - 8:30p",
+        Thursday: "8:00a - 8:30p",
+        Friday: "8:00a - 8:30p",
+        Saturday: "Closed"
+      },
+      location: "Polo Garage"
+    },
+    {
+      name: "Starbucks Coffee",
+      cuisine: "Coffee",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "7:30a - 7:00p",
+        Tuesday: "7:30a - 7:00p",
+        Wednesday: "7:30a - 7:00p",
+        Thursday: "7:30a - 7:00p",
+        Friday: "7:30a - 5:00p",
+        Saturday: "Closed"
+      },
+      location: "Zachry"
+    },
+    {
+      name: "Reynolds and Reynolds Cafe",
+      cuisine: "American",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "7:00a - 6:00p",
+        Tuesday: "7:00a - 6:00p",
+        Wednesday: "7:00a - 6:00p",
+        Thursday: "7:00a - 6:00p",
+        Friday: "7:00a - 6:00p",
+        Saturday: "Closed"
+      },
+      location: "West Campus"
+    },
+    {
+      name: "ILSQ Food Truck",
+      cuisine: "Halal",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "11:00a - 2:00p",
+        Tuesday: "Closed",
+        Wednesday: "11:00a - 2:00p",
+        Thursday: "Closed",
+        Friday: "11:00a - 2:00p",
+        Saturday: "Closed"
+      },
+      location: "Main Campus"
+    },
+    {
+      name: "Chick-fil-A",
+      cuisine: "Fast Food",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "10:00a - 6:00p",
+        Tuesday: "10:00a - 6:00p",
+        Wednesday: "10:00a - 6:00p",
+        Thursday: "10:00a - 6:00p",
+        Friday: "10:00a - 3:00p",
+        Saturday: "Closed"
+      },
+      location: "West Campus Food Hall"
+    },
+    {
+      name: "Copperhead Jack's",
+      cuisine: "Tex-Mex",
+      schedule: {
+        Sunday: "Closed",
+        Monday: "10:30a - 3:00p",
+        Tuesday: "10:30a - 3:00p",
+        Wednesday: "10:30a - 3:00p",
+        Thursday: "10:30a - 3:00p",
+        Friday: "10:30a - 3:00p",
+        Saturday: "Closed"
+      },
+      location: "West Campus Food Hall"
+    },
+    {
+      name: "Creekside Market",
+      cuisine: "Convenience Store",
+      schedule: {
+        Sunday: "10:00a - 12:00a",
+        Monday: "7:00a - 12:00a",
+        Tuesday: "7:00a - 12:00a",
+        Wednesday: "7:00a - 12:00a",
+        Thursday: "7:00a - 12:00a",
+        Friday: "7:00a - 10:00p",
+        Saturday: "10:00a - 10:00p"
+      },
+      location: "Creekside"
+    },
+    {
+      name: "The Kitchen - Creekside Market",
+      cuisine: "American",
+      schedule: {
+        Sunday: "5:00p - 10:00p",
+        Monday: "11:00a - 10:00p",
+        Tuesday: "11:00a - 10:00p",
+        Wednesday: "11:00a - 10:00p",
+        Thursday: "11:00a - 10:00p",
+        Friday: "Closed",
+        Saturday: "Closed"
+      },
+      location: "Creekside"
+    } 
   ];
 
   function isOpenNow(place) {
