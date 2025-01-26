@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +11,16 @@
             margin: 0;
             padding: 0;
             background-image: url('Images/s.png');
-            background-size: cover;
-            background-repeat: no-repeat;
             background-position: center top;
-            font-family: "Space Grotesk", serif;
         }
 
         .search-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 20px;
-            background: rgba(106, 102, 102, 0.607);
+            background: rgba(102, 99, 99, 0.607);
+            padding: 40px;
+            background: #420303;
             backdrop-filter: blur(10px);
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -54,7 +49,7 @@
             margin-left: 10px;
             border: none;
             border-radius: 8px;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background: linear-gradient(135deg, white, maroon);
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -64,7 +59,7 @@
         }
 
         .search-button:hover {
-            background: linear-gradient(135deg, #feb47b, #ff7e5f);
+            background: linear-gradient(135deg, maroon, white);
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
@@ -72,8 +67,10 @@
         #output {
             margin-top: 120px;
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-            gap: 20px; /* Add spacing between rows and columns */
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 cards per row */
+            gap: 20px;
+            /* Add spacing between rows and columns */
             padding: 20px;
         }
 
@@ -113,34 +110,50 @@
 
         @media (max-width: 768px) {
             #output {
-                grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 cards per row */
             }
         }
 
         @media (max-width: 480px) {
             #output {
-                grid-template-columns: 1fr; /* 1 card per row */
+                grid-template-columns: 1fr;
+                /* 1 card per row */
             }
         }
+
+        .header {
+            background-color: #420303;
+        }
+
     </style>
 </head>
+
 <body>
-    <div class="search-container">
-        <select id="cuisineDropdown" class="search-input">
-            <option value="">-- Select Cuisine --</option>
-            <option value="All-You-Care-To-Eat">All-You-Care-To-Eat</option>
-            <option value="Burgers">Burgers</option>
-            <option value="Convenience Store">Convenience Store</option>
-            <option value="Fast Food">Fast Food</option>
-            <option value="Tex-Mex">Tex-Mex</option>
-            <option value="Coffee">Coffee</option>
-            <option value="Smoothies">Smoothies</option>
-            <option value="Halal">Halal</option>
-            <option value="Pizza">Pizza</option>
-            <option value="American">American</option>
-        </select>
-        <button id="searchButton" class="search-button">Search</button>
+
+    <div class="header">
+            <button onclick="history.back()">&#9664;</button>
+
+        <div class="search-container">
+            <select id="cuisineDropdown" class="search-input">
+                <option value="">-- Select Cuisine --</option>
+                <option value="All-You-Care-To-Eat">All-You-Care-To-Eat</option>
+                <option value="Burgers">Burgers</option>
+                <option value="Convenience Store">Convenience Store</option>
+                <option value="Fast Food">Fast Food</option>
+                <option value="Tex-Mex">Tex-Mex</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Smoothies">Smoothies</option>
+                <option value="Halal">Halal</option>
+                <option value="Pizza">Pizza</option>
+                <option value="American">American</option>
+            </select>
+            <button id="searchButton" class="search-button">Search</button>
+        </div>
     </div>
+
     <div id="output"></div>
+
 </body>
+
 </html>
