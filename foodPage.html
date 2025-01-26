@@ -15,45 +15,63 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center top;
+      font-family: "Space Grotesk", serif;
     }
-
     .search-container {
-      width: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
-      left: 550px;
       top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 20px;
+      background: rgba(106, 102, 102, 0.607);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-
+    
     .search-input {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 20px;
-      padding: 5px;
-      border: 2px solid white;
-      border-radius: 5px;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
+      width: 300px;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease-in-out;
+      font-family: "Space Grotesk", serif;
     }
-
-    .search-input::placeholder {
-      color: white; /* Placeholder text color */
+    
+    .search-input:focus {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
-
+    
     .search-button {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 20px;
-      padding: 5px 10px;
-      margin-left: 5px;
-      border: 2px solid white;
-      border-radius: 5px;
-      background: rgba(0, 0, 0, 0.8);
+      font-size: 16px;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
       color: white;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease-in-out, transform 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      font-family: "Space Grotesk", serif;
     }
-
+    
     .search-button:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: linear-gradient(135deg, #feb47b, #ff7e5f);
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
-
+    
+    
     #output {
       margin-top: 20px;
       padding: 15px;
@@ -68,7 +86,7 @@
 
 <body>
   <div class="search-container">
-    <label for="cuisineDropdown">Select Cuisine:</label>
+   
     <select id="cuisineDropdown" class="search-input">
       <option value="">-- Select Cuisine --</option>
       <option value="Fast Food">Fast Food</option>
