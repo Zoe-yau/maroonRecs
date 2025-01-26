@@ -6,7 +6,7 @@ const study = [
     {name: "Cushing Library", location: "Central", weekdayhours: "", weekendHours: ""},
     {name: "Quad bucks study rooms", location: "Southside", weekdayhours: "", weekendHours: ""},
     {name: "Arch A", locaiton: "Northside", weekdayhours: "", weekendHours: ""},
-    {name: "Student Computing Center", location: "Southside", weekdayhours: "", weekendHours: ""}}
+    {name: "Student Computing Center", location: "Southside", weekdayhours: "", weekendHours: ""}
 
 ];
 
