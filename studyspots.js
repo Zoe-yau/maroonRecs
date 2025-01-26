@@ -10,11 +10,3 @@ const study = [
 
 ];
 
-
-Sunday	Closed
-Monday	8 AM–5 PM
-Tuesday	8 AM–5 PM
-Wednesday	8 AM–5 PM
-Thursday	8 AM–5 PM
-Friday	8 AM–5 PM
-Saturday	Closed
