@@ -448,85 +448,100 @@ const foodPlaces = [
       location: "Creekside"
     } 
   ];
+// Helper function to determine if a place is currently open
+function isOpenNow(place) {
+  const now = new Date();
+  const currentDay = now.toLocaleDateString("en-US", { weekday: "long" });
+  const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
 
-  function isOpenNow(place) {
-    const now = new Date();
-    const currentDay = now.toLocaleDateString("en-US", { weekday: "long" }); // Get current day (e.g., "Monday")
-    const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
-  
-    // Get today's schedule
-    const todaySchedule = place.schedule[currentDay];
-  
-    if (todaySchedule === "Closed") {
-      return false; // Place is closed for the day
+  const todaySchedule = place.schedule[currentDay];
+
+  if (todaySchedule === "Closed") {
+    return false; // Place is closed for the entire day
+  }
+
+  // Split the schedule into individual time ranges
+  const timeRanges = todaySchedule.split(", ").map(range => range.trim());
+
+  // Check if the current time falls within any of the time ranges
+  return timeRanges.some(range => {
+    const [start, end] = range.split(" - ").map(convertTo24Hour);
+    return start <= currentTime && end >= currentTime;
+  });
+}
+
+// Helper function to convert 12-hour time to 24-hour format
+function convertTo24Hour(time) {
+  const [hourMinute, period] = [time.slice(0, -1), time.slice(-1)];
+  let [hour, minute] = hourMinute.split(":").map(Number);
+
+  if (period === "p" && hour !== 12) hour += 12; // Add 12 hours for PM, except 12 PM
+  if (period === "a" && hour === 12) hour = 0; // Convert 12 AM to 00
+
+  return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+}
+
+// Function to display food places in the output container
+function displayPlaces(places) {
+  const output = document.getElementById("output");
+  output.innerHTML = ""; // Clear previous results
+
+  // Sort the places so open ones appear first
+  const sortedPlaces = places.sort((a, b) => {
+    const isOpenA = isOpenNow(a);
+    const isOpenB = isOpenNow(b);
+    return isOpenB - isOpenA; // Places that are open will appear first
+  });
+
+  sortedPlaces.forEach(place => {
+    const isOpen = isOpenNow(place); // Determine if the place is open
+    const placeDiv = document.createElement("div");
+    placeDiv.className = "info-box";
+
+    let scheduleHTML = "<strong>Schedule:</strong><ul>";
+    for (const day in place.schedule) {
+      scheduleHTML += `<li><strong>${day}:</strong> ${place.schedule[day]}</li>`;
     }
-  
-    // Split the schedule into individual time ranges
-    const timeRanges = todaySchedule.split(", ").map(range => range.trim());
-  
-    // Check if current time is within any of the time ranges
-    return timeRanges.some(range => {
-      const [start, end] = range.split(" - ").map(convertTo24Hour); // Convert times to 24-hour format
-      return start <= currentTime && end >= currentTime;
-    });
-  }
-  
-  // Helper function to convert 12-hour time to 24-hour format
-  function convertTo24Hour(time) {
-    const [hourMinute, period] = [time.slice(0, -1), time.slice(-1)];
-    let [hour, minute] = hourMinute.split(":").map(Number);
-  
-    if (period === "p" && hour !== 12) hour += 12; // Add 12 hours for PM, except 12 PM
-    if (period === "a" && hour === 12) hour = 0; // Convert 12 AM to 00
-  
-    return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
-  }
-  
-  function displayPlaces(places) {
-    const output = document.getElementById("output");
-    output.innerHTML = ""; // Clear previous content
-  
-    // Sort places by rating in descending order
-    const sortedPlaces = places.sort((a, b) => b.rating - a.rating);
-  
-    sortedPlaces.forEach((place, index) => {
-      const isOpen = isOpenNow(place); // Check if the place is open
-      const placeDiv = document.createElement("div");
-      placeDiv.className = "info-box";
-      
-      // Construct the schedule HTML
-      let scheduleHTML = "<strong>Schedule:</strong><ul>";
-      for (const day in place.schedule) {
-        scheduleHTML += `<li><strong>${day}:</strong> ${place.schedule[day]}</li>`;
-      }
-      scheduleHTML += "</ul>";
-  
-      placeDiv.innerHTML = `
-        <h3>${index + 1}. ${place.name}</h3>
-        <p><strong>Location:</strong> ${place.location}</p>
-        <p><strong>Status:</strong> <span class="${isOpen ? 'open' : 'closed'}">${isOpen ? 'Open' : 'Closed'}</span></p>
-        <p><strong>Cuisine:</strong> ${place.cuisine}</p>
-        ${scheduleHTML}
-      `;
-      output.appendChild(placeDiv);
-    });
-  }
-  
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    displayPlaces(foodPlaces); // Display all places on page load
+    scheduleHTML += "</ul>";
+
+    placeDiv.innerHTML = `
+      <h3>${place.name}</h3>
+      <p><strong>Location:</strong> ${place.location}</p>
+      <p><strong>Status:</strong> <span class="${isOpen ? 'open' : 'closed'}">${isOpen ? 'Open' : 'Closed'}</span></p>
+      <p><strong>Cuisine:</strong> ${place.cuisine}</p>
+      ${scheduleHTML}
+    `;
+
+    output.appendChild(placeDiv);
   });
-  
-  document.getElementById("searchButton").addEventListener("click", () => {
-    const selectedCuisine = document.getElementById("cuisineDropdown").value.trim();
-  
-    // Filter places by selected cuisine
-    const filteredPlaces = selectedCuisine
-      ? foodPlaces.filter(
-          place => place.cuisine.toLowerCase() === selectedCuisine.toLowerCase()
-        )
-      : foodPlaces;
-  
-    displayPlaces(filteredPlaces); // Display filtered places
-  });
-  
+}
+
+// Filter logic for Search button
+document.getElementById("searchButton").addEventListener("click", () => {
+  const selectedCuisine = document.getElementById("cuisineDropdown").value.trim();
+  const selectedStatus = document.getElementById("statusDropdown").value.trim();
+
+  let filteredPlaces = foodPlaces;
+
+  // Filter by cuisine if a cuisine is selected
+  if (selectedCuisine) {
+    filteredPlaces = filteredPlaces.filter(
+      place => place.cuisine.toLowerCase() === selectedCuisine.toLowerCase()
+    );
+  }
+
+  // Filter by status (Open or Closed) if a status is selected
+  if (selectedStatus === "Open") {
+    filteredPlaces = filteredPlaces.filter(place => isOpenNow(place));
+  } else if (selectedStatus === "Closed") {
+    filteredPlaces = filteredPlaces.filter(place => !isOpenNow(place));
+  }
+
+  // Display the filtered places
+  displayPlaces(filteredPlaces);
+});
+
+// Initial display of all food places on page load
+document.addEventListener("DOMContentLoaded", () => {
+  displayPlaces(foodPlaces); // Show all places by default with open ones ranked first
+});
