@@ -27,7 +27,7 @@ function displayPlaces(places) {
     const placeDiv = document.createElement("div");
     placeDiv.className = "food-place";
     placeDiv.innerHTML = `
-      <h3>${index + 1}. ${place.name}</h3>
+      <h3 id="name">${index + 1}. ${place.name}</h3>
       <p>Cuisine: ${place.cuisine}</p>
       <p>Rating: ${place.rating.toFixed(1)}</p>
       <p>Reviews: ${place.reviewsCount}</p>

@@ -50,7 +50,7 @@ function displayPlaces(places) {
     const placeDiv = document.createElement("div");
     placeDiv.className = "info-box";
     placeDiv.innerHTML = `
-      <h3>${index + 1}. ${place.name}</h3>
+      <h3 id="name">${index + 1}. ${place.name}</h3>
       <p><strong>Cuisine:</strong> ${place.cuisine}</p>
       <p><strong>Rating:</strong> ${place.rating.toFixed(1)}</p>
       <p><strong>Reviews:</strong> ${place.reviewsCount}</p>
