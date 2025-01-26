@@ -22,8 +22,11 @@ const foodPlaces = [
   function displayPlaces(places) {
     const output = document.getElementById("output");
     output.innerHTML = "";
+    console.log("in displayPlaces");
+    console.log(places)
 
     const sortedPlaces = places.sort((a, b) => b.rating - a.rating);
+
 
     sortedPlaces.forEach((place, index) => {
       const isOpen = isOpenNow(place);
@@ -33,8 +36,6 @@ const foodPlaces = [
         <h3>${index + 1}. ${place.name}</h3>
         <p><strong>Location:</strong> ${place.location}</p>
         <p><strong>Status:</strong> <span class="${isOpen ? 'open' : 'closed'}">${isOpen ? 'Open' : 'Closed'}</span></p>
-        <p><strong>Review:</strong> "${place.review}"</p>
-        <p><strong>Rating:</strong> ${place.rating.toFixed(1)}</p>
       `;
       output.appendChild(placeDiv);
     });
