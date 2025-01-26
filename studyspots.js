@@ -2,7 +2,7 @@ const studySpots = [
     // Libraries
 {
     name: "Evans Library",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "24/7",
     weekendHours: "24/7",
     busiestTimes: "Weekday evenings (6 PM - 10 PM)",
@@ -36,7 +36,7 @@ const studySpots = [
 // Study Lounges and Areas
 {
     name: "MSC Flag Room",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "24/7",
     weekendHours: "24/7",
     busiestTimes: "Evenings (6 PM - 11 PM)",
@@ -44,7 +44,7 @@ const studySpots = [
 },
 {
     name: "Aggie Honor Lounge - MSC",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "8 AM - 10 PM",
     weekendHours: "Closed",
     busiestTimes: "Afternoons (12 PM - 4 PM)",
@@ -78,7 +78,7 @@ const studySpots = [
 },
 {
     name: "Harrington Tower Lobby",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "8 AM - 9 PM",
     weekendHours: "Closed",
     busiestTimes: "Midday (11 AM - 3 PM)",
@@ -86,7 +86,7 @@ const studySpots = [
 },
 {
     name: "Langford Architecture Building",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "8 AM - 10 PM",
     weekendHours: "Closed",
     busiestTimes: "Afternoons (1 PM - 5 PM)",
@@ -96,7 +96,7 @@ const studySpots = [
 // Coffee Shops with Study Spaces
 {
     name: "Starbucks at Evans Library",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "24/7",
     weekendHours: "24/7",
     busiestTimes: "Evenings (6 PM - 11 PM)",
@@ -104,7 +104,7 @@ const studySpots = [
 },
 {
     name: "Sweet Eugene’s House of Java",
-    location: "Off-campus",
+    location: "Off Campus",
     weekdayHours: "7 AM - 12 AM",
     weekendHours: "8 AM - 12 AM",
     busiestTimes: "Afternoons (1 PM - 5 PM)",
@@ -112,7 +112,7 @@ const studySpots = [
 },
 {
     name: "What’s the Buzz Coffee - MSC",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "7 AM - 7 PM",
     weekendHours: "Closed",
     busiestTimes: "Midday (11 AM - 3 PM)",
@@ -122,7 +122,7 @@ const studySpots = [
 // Outdoor Spaces
 {
     name: "Rudder Fountain Area",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "24/7",
     weekendHours: "24/7",
     busiestTimes: "Afternoons (12 PM - 5 PM)",
@@ -130,7 +130,7 @@ const studySpots = [
 },
 {
     name: "Aggie Park Pavilion",
-    location: "Central",
+    location: "Central Campus",
     weekdayHours: "24/7",
     weekendHours: "24/7",
     busiestTimes: "Afternoons (1 PM - 6 PM)",
@@ -213,6 +213,9 @@ function filterAndRankPlaces() {
 
     const selectedLocation = locationDropdown.value; // User-selected location
     const selectedStatus = statusDropdown.value; // User-selected status (Open/Closed)
+
+    console.log(selectedLocation);
+    console.log(selectedStatus);
 
     // Filter study spots based on location and status
     const filteredPlaces = studySpots.filter((place) => {
