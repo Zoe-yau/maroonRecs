@@ -30,28 +30,37 @@
         }
 
         .info-box {
-            background: #400000;
+            background: #692222be;
             color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            width: 320px;
             text-align: left;
-            font-family: "Courier New", Courier, monospace;
-            line-height: 1.6;
+            margin: 20px;
+            font-family: 'Courier New, Courier, monospace';
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         .info-box h3 {
-            margin: 0;
-            font-size: 20px;
-            text-align: center;
-            margin-bottom: 10px;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
+            font-size: 22px;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-top: 0;
+            border-radius: 10px;
+            color: black;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
         }
 
         .info-box p {
             margin: 5px 0;
         }
+
 
         .open {
             font-weight: bold;
@@ -75,48 +84,28 @@
             color: lightgray;
         }
 
+ 
+        #output {
+            margin-top: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
         .search-container {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 20px;
             position: absolute;
             top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 15%;
+            justify-content: center;
             padding: 20px;
-            background: rgba(106, 102, 102, 0.607);
-            backdrop-filter: blur(10px);
+            background: #420303;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        #output {
-            margin-top: 20px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .search-button {
-            font-size: 16px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out, transform 0.2s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            font-family: "Space Grotesk", serif;
-        }
-
-        .search-button:hover {
-            background: linear-gradient(135deg, #feb47b, #ff7e5f);
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .search-input {
@@ -135,6 +124,29 @@
         .search-input:focus {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
+
+        .search-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, white, maroon);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-family: "Space Grotesk", serif;
+        }
+
+        .search-button:hover {
+            background: linear-gradient(135deg, maroon, white);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+
 
         @media (max-width: 768px) {
             #output {
