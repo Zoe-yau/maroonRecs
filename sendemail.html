@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notify Me: Class Spot Availability</title>
+  <script type="text/javascript" 
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+</head>
+<body>
+  <h1>Notify Me: Class Spot Availability</h1>
+
+  <form id="contact-form">
+    <label for="to_name">Your Name:</label>
+    <input type="text" id="to_name" name="to_name" required><br><br>
+
+    <label for="to_email">Your Email:</label>
+    <input type="email" id="to_email" name="to_email" required><br><br>
+
+    <label for="class">Class You're Interested In:</label>
+    <input type="text" id="class" name="class" required><br><br>
+
+    <button type="submit">Notify Me</button>
+  </form>
+
+  <script>
+    // Initialize EmailJS with your user ID
+    emailjs.init('P0BcqvTSt2ARDuslB');
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get form values
+      var name = document.getElementById("to_name").value;
+      var email = document.getElementById("to_email").value;
+      var className = document.getElementById("class").value;
+
+      // Send confirmation email to user
+      emailjs.send('service_kj5so8p', 'template_bf6iull', {
+        to_email: email,
+        from_name: name,
+        class_name: className
+      })
+      .then(function(response) {
+        alert("Thank you, " + name + "! A confirmation email has been sent to " + email + ". We'll notify you when a spot opens for " + className + ".");
+      }, function(error) {
+        alert("Error sending email: " + error.text);
+      });
+    });
+  </script>
+</body>
+</html>
