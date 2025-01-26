@@ -56,9 +56,13 @@
 <body>
 
   <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" placeholder="Type your search here..." />
+    <label for="searchInput">Enter Cuisine:</label>
+    <input type="text" id="searchInput" class="search-input" placeholder="e.g., Mexican, Burgers" />
     <button class="search-button" onclick="performSearch()">Search</button>
   </div>
+
+  <div id="output"></div>
+  
 
   <script>
     function performSearch() {
