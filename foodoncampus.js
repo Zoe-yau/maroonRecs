@@ -13,66 +13,45 @@ const foodPlaces = [
     { name: "Whataburger", cuisine: "Fast Food", openTime: "10:00", closeTime: "23:00", location: "West Campus" },
   ];
 
-  
-function timeToNumber(time) {
-    const [hours, minutes] = time.split(":").map(Number);
-    return hours * 60 + minutes; // Convert time to minutes since midnight
-}
-
-function isOpen(openTime, closeTime) {
+  function isOpenNow(place) {
     const now = new Date();
-    const currentTime = now.getHours() * 60 + now.getMinutes(); // Current time in minutes
-    const open = timeToNumber(openTime);
-    const close = timeToNumber(closeTime);
-    return currentTime >= open && currentTime < close; // Return true if open
-}
+    const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    return place.openTime <= currentTime && place.closeTime >= currentTime;
+  }
 
-
-function displayFoodPlaces(filterOpenOnly = false) {
+  function displayPlaces(places) {
     const output = document.getElementById("output");
-    output.innerHTML = ""; // Clear previous results
-  
-    const now = new Date();
-  
-    // Filter food places
-    const filteredPlaces = foodPlaces.filter((place) => {
-      if (filterOpenOnly) {
-        return isOpen(place.openTime, place.closeTime); // Only show open places
-      }
-      return true; // Show all places
-    });
-  
-    if (filteredPlaces.length === 0) {
-      output.innerHTML = "<p>No food places match your criteria.</p>";
-      return;
-    }
-  
-    // Display food places
-    filteredPlaces.forEach((place) => {
-      const status = isOpen(place.openTime, place.closeTime) ? "Open" : "Closed";
+    output.innerHTML = "";
+
+    const sortedPlaces = places.sort((a, b) => b.rating - a.rating);
+
+    sortedPlaces.forEach((place, index) => {
+      const isOpen = isOpenNow(place);
       const placeDiv = document.createElement("div");
-      placeDiv.className = "food-place";
+      placeDiv.className = "info-box";
       placeDiv.innerHTML = `
-        <h3>${place.name}</h3>
-        <p>Cuisine: ${place.cuisine}</p>
-        <p>Location: ${place.location}</p>
-        <p>Hours: ${place.openTime} - ${place.closeTime}</p>
-        <p>Status: <span style="color: ${status === "Open" ? "green" : "red"}">${status}</span></p>
+        <h3>${index + 1}. ${place.name}</h3>
+        <p><strong>Location:</strong> ${place.location}</p>
+        <p><strong>Status:</strong> <span class="${isOpen ? 'open' : 'closed'}">${isOpen ? 'Open' : 'Closed'}</span></p>
+        <p><strong>Review:</strong> "${place.review}"</p>
+        <p><strong>Rating:</strong> ${place.rating.toFixed(1)}</p>
       `;
       output.appendChild(placeDiv);
     });
-}
+  }
 
-document.getElementById("showAllButton").addEventListener("click", () => {
-    displayFoodPlaces(false); // Show all places
+  document.addEventListener("DOMContentLoaded", () => {
+    displayPlaces(foodPlaces);
   });
-  
-document.getElementById("showOpenButton").addEventListener("click", () => {
-    displayFoodPlaces(true); // Show only open places
-});
-  
-  // Display all places on page load
-displayFoodPlaces(false);
-  
-  
-  
+
+  document.getElementById("searchButton").addEventListener("click", () => {
+    const selectedCuisine = document.getElementById("cuisineDropdown").value.trim();
+
+    const filteredPlaces = selectedCuisine
+      ? foodPlaces.filter(
+          place => place.cuisine.toLowerCase() === selectedCuisine.toLowerCase()
+        )
+      : foodPlaces;
+
+    displayPlaces(filteredPlaces);
+  });
