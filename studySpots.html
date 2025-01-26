@@ -9,29 +9,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="ranking.js" defer></script>
+    <script src="studyspots.js" defer></script>
 
-    <title>Professor Selection</title>
+    <title>Study Spots</title>
 
     <style>
         body {
             background-image: url("Images/dormPic.jpeg");
-
-        }
-
-        #output {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        #header {
-            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
             color: white;
-            text-align: center;
-            letter-spacing: 10px;
-            font-size: 60px;
         }
 
         .top {
@@ -40,21 +29,152 @@
             position: relative;
         }
 
+        .info-box {
+            background: #400000;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: left;
+            font-family: "Courier New", Courier, monospace;
+            line-height: 1.6;
+        }
 
+        .info-box h3 {
+            margin: 0;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .info-box p {
+            margin: 5px 0;
+        }
+
+        .open {
+            font-weight: bold;
+            color: green;
+        }
+
+        .closed {
+            font-weight: bold;
+            color: red;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: lightgray;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            background: rgba(106, 102, 102, 0.607);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #output {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .search-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-family: "Space Grotesk", serif;
+        }
+
+        .search-button:hover {
+            background: linear-gradient(135deg, #feb47b, #ff7e5f);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-input {
+            width: 300px;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            font-family: "Space Grotesk", serif;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            #output {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #output {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="top">
-
         <button onclick="history.back()">&#9664;</button>
-
-        <h1 id="header">STUDY SPOTS </h1>
-
     </div>
+    <div class="search-container">
 
+        <label for="locationDropdown">Filter by Location:</label>
+        <select id="locationDropdown" class="search-input">
+            <option value="All">All</option>
+            <option value="Central">Central</option>
+            <option value="Southside">Southside</option>
+            <option value="Wehner Building (West Campus)">West Campus</option>
+        </select>
 
+        <label for="statusDropdown">Filter by Status:</label>
+        <select id="statusDropdown" class="search-input">
+            <option value="All">All</option>
+            <option value="Open">Open</option>
+            <option value="Closed">Closed</option>
+        </select>
 
+        <button id="filterButton" class="search-button">Search</button>
+    </div>
+    <div id="output">
+    </div>
 </body>
 
 </html>
