@@ -35,58 +35,6 @@ const foodPlaces = [
 ];
 
 
-// // Function to display food places
-// function displayPlaces(places) {
-//   const output = document.getElementById("output");
-//   output.innerHTML = ""; // Clear previous content
-
-//   // Sort places by rating and then by reviews
-//   const sortedPlaces = places.sort((a, b) => {
-//     if (b.rating !== a.rating) {
-//       return b.rating - a.rating; // Sort by rating
-//     }
-//     return b.reviewsCount - a.reviewsCount; // Tiebreaker: number of reviews
-//   });
-
-//   // Render sorted places
-//   sortedPlaces.forEach((place, index) => {
-//     const placeDiv = document.createElement("div");
-//     placeDiv.className = "info-box";
-//     placeDiv.innerHTML = `
-//       <h3>${index + 1}. ${place.name}</h3>
-//       <p><strong>Cuisine:</strong> ${place.cuisine}</p>
-//       <p><strong>Rating:</strong> ${place.rating.toFixed(1)}</p>
-//       <p><strong>Reviews:</strong> ${place.reviewsCount}</p>
-//       <p><strong>Review:</strong> "${place.review}"</p>
-//     `;
-//     output.appendChild(placeDiv);
-//   });
-// }
-
-// // Display all places by default on page load
-// document.addEventListener("DOMContentLoaded", () => {
-//   displayPlaces(foodPlaces); // Display all food places initially
-// });
-
-// // Event listener for dropdown selection
-// document.getElementById("searchButton").addEventListener("click", () => {
-//   const selectedCuisine = document.getElementById("cuisineDropdown").value.trim();
-
-//   // If no cuisine is selected, show all places
-//   if (!selectedCuisine) {
-//     displayPlaces(foodPlaces);
-//     return;
-//   }
-
-//   // Filter by selected cuisine (case-insensitive)
-//   const filteredPlaces = foodPlaces.filter(
-//     place => place.cuisine.toLowerCase() === selectedCuisine.toLowerCase()
-//   );
-
-//   // Display filtered results
-//   displayPlaces(filteredPlaces);
-// });
-
 function displayPlaces(places) {
   const output = document.getElementById("output");
   output.innerHTML = "";
