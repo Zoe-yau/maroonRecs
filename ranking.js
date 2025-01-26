@@ -91,7 +91,7 @@ const data = [
   { section: "CSCE-110-502", A: 4, B: 11, C: 7, D: 0, F: 0, GPA: 2.863, Q: 2, Instructor: "YUM K" },
   { section: "CSCE-110-503", A: 3, B: 4, C: 5, D: 2, F: 1, GPA: 2.400, Q: 0, Instructor: "YUM K" },
   { section: "CSCE-110-504", A: 6, B: 13, C: 4, D: 1, F: 0, GPA: 3.000, Q: 0, Instructor: "YUM K" },
-  { section: "CSCE-110-505", A: 9, B: 9, C: 4, D: 1, F: 0, GPA: 3.130, Q: 0, instructor: "YUM K" },
+  { section: "CSCE-110-505", A: 9, B: 9, C: 4, D: 1, F: 0, GPA: 3.130, Q: 0, Instructor: "YUM K" },
   { section: "CSCE-110-506", A: 7, B: 8, C: 8, D: 0, F: 0, GPA: 2.956, Q: 1, Instructor: "YUM K" },
   { section: "CSCE-110-507", A: 6, B: 4, C: 9, D: 1, F: 1, GPA: 2.619, Q: 0, Instructor: "YUM K" },
   { section: "CSCE-111-500", A: 16, B: 2, C: 0, D: 1, F: 2, GPA: 3.380, Q: 3, Instructor: "MAHMOOD M" },
