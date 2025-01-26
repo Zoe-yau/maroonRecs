@@ -94,14 +94,23 @@
             text-align: center;
         }
 
+        .back {
+            position: absolute;
+            top: 10;
+            left: 10;
+        }
+
     </style>
 
 </head>
 
 <body>
+    <div class="back"> 
+        <button onclick="history.back()">&#9664;</button>
+    </div>
 
 
-        <h1> EMAIL US</h1>
+    <h1> EMAIL US</h1>
 
     <div class="form-container">
         <form id="contact-form">
@@ -114,7 +123,7 @@
                 <input type="email" id="to_email" name="to_email" placeholder="Enter your email address" required>
             </div>
             <div class="form-group">
-                <label for="class">Class You're Interested In:</label>
+                <label for="class">Your Review:</label>
                 <input type="text" id="class" name="class" placeholder="Enter the class name" required>
             </div>
             <button type="submit">Notify Me</button>
