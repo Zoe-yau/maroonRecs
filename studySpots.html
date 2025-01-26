@@ -23,13 +23,6 @@
             color: white;
         }
 
-        .top {
-            font-family: "Space Grotesk", serif;
-            padding: 20px;
-            position: relative;
-            background-color: #420303;
-        }
-
         .info-box {
             background: #562424;
             color: white;
@@ -75,19 +68,6 @@
             color: red;
         }
 
-        button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            color: lightgray;
-        }
-
- 
         #output {
             margin-top: 120px;
             display: flex;
@@ -102,7 +82,7 @@
             align-items: center;
             gap: 20px;
             position: absolute;
-            top: 20px;
+            top: 40px;
             left: 0;
             width: 100%;
             justify-content: center;
@@ -151,46 +131,42 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-
-        @media (max-width: 768px) {
-            #output {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        #header {
+            background-color: #420303;
+            padding: 15px;
         }
 
-        @media (max-width: 480px) {
-            #output {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 
 <body>
-    <div class="top">
+
+    <div id="header">
         <button onclick="history.back()">&#9664;</button>
-    </div>
-    <div class="search-container">
 
-        <label for="locationDropdown">Filter by Location:</label>
-        <select id="locationDropdown" class="search-input">
-            <option value="All">All</option>
-            <option value="Central">Central</option>
-            <option value="Southside">Southside</option>
-            <option value="Wehner Building (West Campus)">West Campus</option>
-        </select>
+        <div class="search-container">
 
-        <label for="statusDropdown">Filter by Status:</label>
-        <select id="statusDropdown" class="search-input">
-            <option value="All">All</option>
-            <option value="Open">Open</option>
-            <option value="Closed">Closed</option>
-        </select>
+            <label for="locationDropdown">Filter by Location:</label>
+            <select id="locationDropdown" class="search-input">
+                <option value="All">All</option>
+                <option value="Central">Central</option>
+                <option value="Southside">Southside</option>
+                <option value="Wehner Building (West Campus)">West Campus</option>
+            </select>
 
-        <button id="filterButton" class="search-button">Search</button>
+            <label for="statusDropdown">Filter by Status:</label>
+            <select id="statusDropdown" class="search-input">
+                <option value="All">All</option>
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
+            </select>
+
+            <button id="filterButton" class="search-button">Search</button>
+        </div>
     </div>
-    <div id="output">
-    </div>
+
+        <div id="output">
+        </div>
 </body>
 
 </html>
