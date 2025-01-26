@@ -73,7 +73,6 @@ const data = [
   { section: "CYBR-402-500", A: 5, B: 2, C: 0, D: 0, F: 0, GPA: 3.714, Q: 0, Instructor: "DEWITTE P" },
   { section: "CYBR-403-501", A: 5, B: 4, C: 1, D: 0, F: 0, GPA: 3.4, Q: 2, Instructor: "ANWAR S" },
   { section: "CYBR-405-500", A: 45, B: 0, C: 1, D: 0, F: 0, GPA: 3.956, Q: 1, Instructor: "PRICE P" },
-  { section: "CYBR-601-600", A: 14, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "ROMERO J" },
   { section: "CYBR-602-601", A: 12, B: 0, C: 0, D: 0, F: 0, GPA: 4.0, Q: 0, Instructor: "DEWITTE P" },
   { section: "CYBR-603-600", A: 12, B: 1, C: 0, D: 0, F: 0, GPA: 3.923, Q: 0, Instructor: "DEWITTE P" },
   { section: "CYBR-604-600", A: 7, B: 6, C: 1, D: 0, F: 0, GPA: 3.428, Q: 0, Instructor: "CARLISLE M" },
