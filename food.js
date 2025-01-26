@@ -13,8 +13,27 @@ const foodPlaces = [
     { name: "Taz Indian Cuisine", cuisine: "Indian", rating: 4.4, reviewsCount: 328, review: "Authentic Indian food with a great selection. The butter chicken is fantastic." },
     { name: "Ohana Korean Grill", cuisine: "Korean", rating: 4.6, reviewsCount: 489, review: "Delicious Korean BBQ with fresh ingredients. The bulgogi is a standout dish." },
     { name: "First Watch", cuisine: "Breakfast & Brunch", rating: 4.7, reviewsCount: 1123, review: "Healthy and hearty breakfast options. The avocado toast is a customer favorite." },
-    { name: "RX Pizza", cuisine: "Pizza", rating: 4.8, reviewsCount: 1345, review: "Arguably the best pizza in town. The pesto chicken pizza is highly recommended." }
+    { name: "RX Pizza", cuisine: "Pizza", rating: 4.8, reviewsCount: 1345, review: "Arguably the best pizza in town. The pesto chicken pizza is highly recommended." },
+    { name: "Shipwreck Grill", cuisine: "Seafood", rating: 4.5, reviewsCount: 980, review: "Fresh seafood with a laid-back atmosphere. Try the blackened shrimp tacos!" },
+    { name: "Stella Southern Cafe", cuisine: "Southern", rating: 4.8, reviewsCount: 782, review: "A modern twist on Southern classics. The chicken and waffles are divine." },
+    { name: "Howdy's Texas Grill'd Pizza", cuisine: "Pizza", rating: 4.7, reviewsCount: 490, review: "Texas-style pizzas that are packed with flavor. The BBQ brisket pizza is a must-try!" },
+    { name: "Cafe Eccell", cuisine: "American", rating: 4.5, reviewsCount: 1050, review: "Known for their strawberry tart and an upscale twist on American classics." },
+    { name: "Urban Table", cuisine: "American", rating: 4.6, reviewsCount: 870, review: "A great spot for casual dining with flavorful dishes like their grilled salmon." },
+    { name: "The Republic Steakhouse", cuisine: "Steakhouse", rating: 4.7, reviewsCount: 1250, review: "An upscale steakhouse offering perfectly cooked steaks and an extensive wine list." },
+    { name: "Luigi's Patio Ristorante", cuisine: "Italian", rating: 4.6, reviewsCount: 845, review: "Romantic ambiance with authentic Italian dishes and live music on weekends." },
+    { name: "Texas Roadhouse", cuisine: "Steakhouse", rating: 4.4, reviewsCount: 2150, review: "Classic steakhouse with hearty portions and legendary bread rolls." },
+    { name: "World of Beer", cuisine: "Bar & Grill", rating: 4.5, reviewsCount: 730, review: "A wide selection of craft beers paired with delicious bar food." },
+    { name: "J. Cody's Steak and Barbeque", cuisine: "Barbecue", rating: 4.6, reviewsCount: 960, review: "Family-style barbecue joint with generous portions of brisket and ribs." },
+    { name: "Coco Loco Mexican Grill", cuisine: "Mexican", rating: 4.4, reviewsCount: 830, review: "Known for their delicious fajitas and margaritas. A College Station classic!" },
+    { name: "Black Bear Diner", cuisine: "Diner", rating: 4.3, reviewsCount: 710, review: "Hearty diner meals with large portions. Perfect for breakfast and comfort food." },
+    { name: "Harvest Coffee", cuisine: "Cafe", rating: 4.8, reviewsCount: 680, review: "A cozy cafe with artisanal coffee and fresh pastries. A local favorite!" },
+    { name: "Kolache Rolf's", cuisine: "Bakery", rating: 4.7, reviewsCount: 890, review: "Delicious kolaches and breakfast options. Try their sausage and cheese kolache!" },
+    { name: "Torchy's Tacos", cuisine: "Mexican", rating: 4.6, reviewsCount: 2100, review: "Creative tacos with bold flavors. Don't miss the Trailer Park taco!" },
+    { name: "Star Cinema Grill", cuisine: "American", rating: 4.5, reviewsCount: 650, review: "Dinner and a movie experience with a full menu and cozy seating." },
+    { name: "Freddy's Frozen Custard & Steakburgers", cuisine: "Fast Food", rating: 4.4, reviewsCount: 1150, review: "Fast service and quality steakburgers. Their frozen custard is a treat!" },
+    { name: "Chicken Express", cuisine: "Fast Food", rating: 4.3, reviewsCount: 920, review: "Crispy fried chicken and sweet tea make this a quick and delicious stop." }
   ];
+  
   
   // Function to display food places
   function displayPlaces(places) {
