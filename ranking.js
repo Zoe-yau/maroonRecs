@@ -77,3 +77,12 @@ rankedData.forEach((professor, index) => {
   // Append the child div to the parent div
   output.appendChild(infoDiv);
 });
+
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

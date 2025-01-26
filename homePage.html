@@ -1,37 +1,37 @@
 <html>
+
 <head>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
-	<title> Maroon Reviews </title>
+    <title> Maroon Reviews </title>
 
-	<style>
-
+    <style>
         body {
             background-image: url("Images/AMBack.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }
 
-		#heading {
+        #heading {
             font-family: 'Courier New', Courier, monospace;
-             color: #420303;
-             font-size: 50px;
+            color: #420303;
+            font-size: 50px;
             text-align: center;
         }
 
-		.heading {
+        .heading {
             font-family: "Space Grotesk", serif;
             font-style: normal;
             font-weight: 400;
             font-size: 100px;
             font-display: swap;
-            color:  #420303;
+            color: #420303;
             text-align: center;
             position: relative;
-        
+
         }
 
         .bottomImage {
@@ -42,14 +42,14 @@
         }
 
         #searchButton {
-         position: absolute;
-         left: 10;  
-         top: 30%;
+            position: absolute;
+            left: 10;
+            top: 30%;
 
         }
 
         #foodButton {
-            position: absolute; 
+            position: absolute;
             right: 10;
             top: 30%;
 
@@ -69,21 +69,86 @@
 
         }
 
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #420303;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
 
-	</style>
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
 
 </head>
 
-	<body>
-        
-        <div class="heading"> MAROON REVIEWS </div>
+<body>
 
-        <a href="professorSelection.html" class="button" id="searchButton"> Professor Search </a>
-        <a href="foodPage.html" class="button" id="foodButton"> Food Page </a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="Images/ExitIcon.png" width="20px" height="20px"></a>
+        <a href="homePage.html">Home</a>
+        <a href="professorSelection.html">Professor Selection</a>
+        <a href="foodPage.html">Home Page</a>
+        <a href="#">Extra</a>
+    </div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="Images/SideBarIcon.png" width="50px" height="50px"></span>
 
 
-        <img class="bottomImage" src="Images/missRevremovebg.png" alt="Rev" width="200px;"  height="200px;">
+    <div class="heading"> MAROON REVIEWS </div>
 
 
-	</body>
+    <a href="professorSelection.html" class="button" id="searchButton"> Professor Search </a>
+    <a href="foodPage.html" class="button" id="foodButton"> Food Page </a>
+
+
+    <img class="bottomImage" src="Images/missRevremovebg.png" alt="Rev" width="200px;" height="200px;">
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+</body>
+
 </html>
