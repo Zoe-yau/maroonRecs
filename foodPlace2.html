@@ -29,6 +29,7 @@
             border-radius: 12px;
         }
 
+        
         .search-input {
             width: 300px;
             font-size: 16px;
@@ -125,6 +126,11 @@
             color: red;
         }
 
+        label[for="locationDropdown"], label[for="statusDropdown"] {
+        color: rgb(255, 255, 255);
+    }
+    
+
 
     </style>
 </head>
@@ -136,6 +142,7 @@
 
     </div>
     <div class="search-container">
+        <label for="locationDropdown">Filter by Location:</label>
         <select id="cuisineDropdown" class="search-input">
             <option value="">-- Select Cuisine --</option>
             <option value="All-You-Care-To-Eat">All-You-Care-To-Eat</option>
@@ -149,6 +156,15 @@
             <option value="Pizza">Pizza</option>
             <option value="American">American</option>
         </select>
+
+        <label for="statusDropdown">Filter by Status:</label>
+        <select id="statusDropdown" class="search-input">
+            <option value="All">All</option>
+            <option value="Open">Open</option>
+            <option value="Closed">Closed</option>
+        </select>
+
+        
         <button id="searchButton" class="search-button">Search</button>
     </div>
 
