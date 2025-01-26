@@ -44,36 +44,74 @@ const data = [
   { section: "CHEN-201-502", A: 55, B: 5, C: 2, D: 1, F: 0, GPA: 3.809, Q: 2, Instructor: "HOLTZAPPLE M" },
   { section: "CHEN-204-201", A: 3, B: 1, C: 1, D: 0, F: 0, GPA: 3.4, Q: 0, Instructor: "JAYARAMAN A" },
 ];
-
 // Sorting logic
-const rankedData = data.sort((a, b) => {
-  if (b.GPA !== a.GPA) {
-    return b.GPA - a.GPA; // Rank by GPA first
+function sortData(data) {
+    return data.sort((a, b) => {
+      if (b.GPA !== a.GPA) {
+        return b.GPA - a.GPA; // Rank by GPA first
+      }
+      if (a.Q !== b.Q) {
+        return a.Q - b.Q; // Rank by fewer Q-Drops second
+      }
+      // Rank by grades (more A's, fewer B-F's)
+      const aGradeTotal = a.A * 4 + a.B * 3 + a.C * 2 + a.D * 1 + a.F * 0;
+      const bGradeTotal = b.A * 4 + b.B * 3 + b.C * 2 + b.D * 1 + b.F * 0;
+      return bGradeTotal - aGradeTotal;
+    });
   }
-  if (a.Q !== b.Q) {
-    return a.Q - b.Q; // Rank by fewer Q-Drops second
-  }
-  // Rank by grades (more A's, fewer B-F's)
-  const aGradeTotal = a.A * 4 + a.B * 3 + a.C * 2 + a.D * 1 + a.F * 0;
-  const bGradeTotal = b.A * 4 + b.B * 3 + b.C * 2 + b.D * 1 + b.F * 0;
-  return bGradeTotal - aGradeTotal;
-});
-
-// Display the ranked data in the HTML
-rankedData.forEach((professor, index) => {
-  // Create a new child div for each professor
-  const infoDiv = document.createElement("div");
-  infoDiv.className = "professor-info"; // Optional: Add a class for styling
-
-  // Add the professor's details as inner HTML
-  infoDiv.innerHTML = `
+  
+  // Display data
+  function displayData(data) {
+    const output = document.getElementById("output");
+    output.innerHTML = ""; // Clear previous results
+  
+    if (data.length === 0) {
+      output.innerHTML = "<p>No results found.</p>";
+      return;
+    }
+  
+    data.forEach((professor, index) => {
+      const infoDiv = document.createElement("div");
+      infoDiv.className = "professor-info"; // Optional: Add a class for styling
+  
+      infoDiv.innerHTML = `
         <p id="rank">${index + 1}</p>
         <p id="instructor">Instructor: ${professor.Instructor}</p>
         <p id="class">Class: ${professor.section}</p>
         <p id="gpa">GPA: ${professor.GPA.toFixed(2)}</p>
         <p id="drops">Q-Drops: ${professor.Q}</p>
-    `;
+      `;
+  
+      output.appendChild(infoDiv);
+    });
+  }
+  
+  // Event listener for search button
+  document.getElementById("searchButton").addEventListener("click", () => {
+    const subject = document.getElementById("subjectDropdown").value;
+    const course = document.getElementById("courseInput").value.trim();
+  
+    let filteredData = data;
+  
+    // Filter by subject
+    if (subject) {
+      filteredData = filteredData.filter((entry) => entry.section.startsWith(subject));
+    }
+  
+    // Filter by course number
+    if (course) {
+      filteredData = filteredData.filter((entry) => entry.section.includes(course));
+    }
+  
+    // Sort and display the filtered data
+    const sortedData = sortData(filteredData);
+    displayData(sortedData);
+  });
 
-  // Append the child div to the parent div
-  output.appendChild(infoDiv);
-});
+  document.getElementById("showAllButton").addEventListener("click", () => {
+    displayData(sortData(data)); // Display all data sorted
+  });  
+  
+  // Display all data initially
+  displayData(sortData(data));
+  
