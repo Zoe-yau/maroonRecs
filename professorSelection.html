@@ -136,7 +136,24 @@
         <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="Images/SideBarIcon.png" width="50px"
                 height="50px"></span>
     </div>
-
+    <div class="search-container">
+        <label for="subjectDropdown">Select Subject:</label>
+        <select id="subjectDropdown" class="search-input">
+          <option value="">-- Select Subject --</option>
+          <option value="CYBR">CYBR</option>
+          <option value="AERO">AERO</option>
+          <option value="BMEN">BMEN</option>
+          <option value="BIOT">BIOT</option>
+          <option value="CHEN">CHEN</option>
+        </select>
+      
+        <label for="courseInput">Enter Course Number:</label>
+        <input id="courseInput" class="search-input" type="text" placeholder="e.g., 201-500">
+        
+        <button id="searchButton" class="search-button">Search</button>
+        <button id="showAllButton" class="search-button">Show All</button>
+      </div>
+      
     <div id="output"></div>
     <script src="script.js"></script>
 
