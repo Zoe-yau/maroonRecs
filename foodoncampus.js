@@ -1,58 +1,392 @@
 const foodPlaces = [
-    { name: "Chick-fil-A", cuisine: "Fast Food", openTime: "07:00", closeTime: "20:00", location: "MSC" },
-    { name: "Rev's American Grill", cuisine: "American", openTime: "11:00", closeTime: "21:00", location: "Kyle Field" },
-    { name: "Piada Italian Street Food", cuisine: "Italian", openTime: "10:30", closeTime: "21:00", location: "MSC" },
-    { name: "Houston Street Subs", cuisine: "Sandwiches", openTime: "07:00", closeTime: "15:00", location: "MSC" },
-    { name: "Copperhead Jack's", cuisine: "Tex-Mex", openTime: "10:30", closeTime: "19:00", location: "Hullabaloo Hall" },
-    { name: "Panda Express", cuisine: "Chinese", openTime: "10:00", closeTime: "20:00", location: "Sbisa Dining Hall" },
-    { name: "Shake Smart", cuisine: "Smoothies & Healthy", openTime: "08:00", closeTime: "20:00", location: "Student Rec Center" },
-    { name: "The Commons Dining Hall", cuisine: "Buffet", openTime: "07:00", closeTime: "19:30", location: "The Commons" },
-    { name: "Aggie Express Convenience Store", cuisine: "Snacks & Drinks", openTime: "07:00", closeTime: "23:00", location: "Multiple Locations" },
-    { name: "Einstein Bros Bagels", cuisine: "Bagels & Coffee", openTime: "07:00", closeTime: "14:00", location: "Blocker" },
-    { name: "Starbucks", cuisine: "Coffee", openTime: "07:00", closeTime: "22:00", location: "MSC" },
-    { name: "Whataburger", cuisine: "Fast Food", openTime: "10:00", closeTime: "23:00", location: "West Campus" },
+  {
+    name: "The Commons Dining Hall",
+    cuisine: "All-You-Care-To-Eat",
+    schedule: {
+      Sunday: "9:00a - 2:00p, 5:00p - 8:00p",
+      Monday: "7:00a - 2:30p, 5:00p - 9:00p",
+      Tuesday: "7:00a - 2:30p, 5:00p - 9:00p",
+      Wednesday: "7:00a - 2:30p, 5:00p - 9:00p",
+      Thursday: "7:00a - 2:30p, 5:00p - 9:00p",
+      Friday: "7:00a - 2:30p, 5:00p - 8:00p",
+      Saturday: "9:00a - 2:00p, 5:00p - 8:00p"
+    },
+    location: "South Campus"
+  },
+  {
+    name: "Sbisa Dining Hall",
+    cuisine: "All-You-Care-To-Eat",
+    schedule: {
+      Sunday: "10:00a - 2:00p, 5:00p - 8:00p",
+      Monday: "7:00a - 2:30p, 5:00p - 8:00p",
+      Tuesday: "7:00a - 2:30p, 5:00p - 8:00p",
+      Wednesday: "7:00a - 2:30p, 5:00p - 8:00p",
+      Thursday: "7:00a - 2:30p, 5:00p - 8:00p",
+      Friday: "7:00a - 2:30p, 5:00p - 8:00p",
+      Saturday: "10:00a - 2:00p, 5:00p - 8:00p"
+    },
+    location: "North Campus"
+  },
+  {
+    name: "Duncan Dining Hall",
+    cuisine: "All-You-Care-To-Eat",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "11:00a - 1:00p",
+      Tuesday: "11:00a - 1:00p",
+      Wednesday: "11:00a - 1:00p",
+      Thursday: "11:00a - 1:00p, 5:00p - 8:00p",
+      Friday: "11:00a - 1:00p",
+      Saturday: "Closed"
+    },
+    location: "South Campus/Quad"
+  },
+  {
+    name: "1876 Burgers",
+    cuisine: "Burgers",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "10:30a - 8:00p",
+      Tuesday: "10:30a - 8:00p",
+      Wednesday: "10:30a - 8:00p",
+      Thursday: "10:30a - 8:00p",
+      Friday: "10:30a - 7:00p",
+      Saturday: "Closed"
+    },
+    location: "Sbisa Complex"
+  },
+  {
+    name: "Aggie Express",
+    cuisine: "Convenience Store",
+    schedule: {
+      Sunday: "9:00a - 12:00a",
+      Monday: "8:00a - 12:00a",
+      Tuesday: "8:00a - 12:00a",
+      Wednesday: "8:00a - 12:00a",
+      Thursday: "8:00a - 12:00a",
+      Friday: "8:00a - 12:00a",
+      Saturday: "8:00a - 12:00a"
+    },
+    location: "Hullabaloo"
+  },
+  {
+    name: "Chick-fil-A",
+    cuisine: "Fast Food",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "10:15a - 10:00p",
+      Tuesday: "10:15a - 10:00p",
+      Wednesday: "10:15a - 10:00p",
+      Thursday: "10:15a - 10:00p",
+      Friday: "10:15a - 8:00p",
+      Saturday: "11:00a - 3:00p"
+    },
+    location: "Sbisa Underground Food Court"
+  },
+  {
+    name: "Copperhead Jack's",
+    cuisine: "Tex-Mex",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "10:30a - 8:00p",
+      Tuesday: "10:30a - 8:00p",
+      Wednesday: "10:30a - 8:00p",
+      Thursday: "10:30a - 8:00p",
+      Friday: "10:30a - 7:00p",
+      Saturday: "Closed"
+    },
+    location: "Sbisa Complex"
+  },
+  {
+    name: "Starbucks",
+    cuisine: "Coffee",
+    schedule: {
+      Sunday: "9:00a - 6:00p",
+      Monday: "7:00a - 8:00p",
+      Tuesday: "7:00a - 8:00p",
+      Wednesday: "7:00a - 8:00p",
+      Thursday: "7:00a - 8:00p",
+      Friday: "7:00a - 6:00p",
+      Saturday: "8:00a - 4:00p"
+    },
+    location: "Hullabaloo"
+  },
+  {
+    name: "Smoothie King",
+    cuisine: "Smoothies",
+    schedule: {
+      Sunday: "12:00p - 6:00p",
+      Monday: "10:00a - 8:00p",
+      Tuesday: "10:00a - 8:00p",
+      Wednesday: "10:00a - 8:00p",
+      Thursday: "10:00a - 8:00p",
+      Friday: "10:00a - 8:00p",
+      Saturday: "12:00p - 6:00p"
+    },
+    location: "Sbisa Underground Food Court"
+  },
+  {
+    name: "Abu Omar Halal",
+    cuisine: "Halal",
+    schedule: {
+      Sunday: "11:00a - 5:00p",
+      Monday: "10:00a - 8:00p",
+      Tuesday: "10:00a - 8:00p",
+      Wednesday: "10:00a - 8:00p",
+      Thursday: "10:00a - 8:00p",
+      Friday: "10:00a - 8:00p",
+      Saturday: "11:00a - 5:00p"
+    },
+    location: "MSC"
+  },
+  {
+    name: "Starbucks Coffee - Evans Library",
+    cuisine: "Coffee",
+    schedule: {
+      Sunday: "12:00p - 6:00p",
+      Monday: "7:30a - 10:00p",
+      Tuesday: "7:30a - 10:00p",
+      Wednesday: "7:30a - 10:00p",
+      Thursday: "7:30a - 10:00p",
+      Friday: "7:30a - 5:00p",
+      Saturday: "Closed"
+    },
+    location: "Evans Library"
+  },
+  {
+    name: "Smoothie King - MSC",
+    cuisine: "Smoothies",
+    schedule: {
+      Sunday: "12:00p - 10:00p",
+      Monday: "10:00a - 10:00p",
+      Tuesday: "10:00a - 10:00p",
+      Wednesday: "10:00a - 10:00p",
+      Thursday: "10:00a - 10:00p",
+      Friday: "10:00a - 8:00p",
+      Saturday: "12:00p - 8:00p"
+    },
+    location: "MSC"
+  },
+  {
+    name: "Spin 'N Stone Pizza",
+    cuisine: "Pizza",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "10:00a - 3:00p",
+      Tuesday: "10:00a - 3:00p",
+      Wednesday: "10:00a - 3:00p",
+      Thursday: "10:00a - 3:00p",
+      Friday: "10:00a - 3:00p",
+      Saturday: "Closed"
+    },
+    location: "MSC"
+  },
+  {
+    name: "The University Club",
+    cuisine: "American",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "Closed",
+      Tuesday: "11:00a - 2:00p",
+      Wednesday: "11:00a - 2:00p",
+      Thursday: "11:00a - 2:00p",
+      Friday: "11:00a - 2:00p",
+      Saturday: "Closed"
+    },
+    location: "MSC"
+  },
+  {
+    name: "Whoop Coop",
+    cuisine: "Convenience Store",
+    schedule: {
+      Sunday: "2:00p - 8:00p",
+      Monday: "11:00a - 8:00p",
+      Tuesday: "11:00a - 8:00p",
+      Wednesday: "11:00a - 8:00p",
+      Thursday: "11:00a - 8:00p",
+      Friday: "11:00a - 8:00p",
+      Saturday: "11:00a - 8:00p"
+    },
+    location: "South Campus"
+  },
+  {
+    name: "Aggie Express - Commons",
+    cuisine: "Convenience Store",
+    schedule: {
+      Sunday: "9:00a - 2:00a",
+      Monday: "7:00a - 2:00a",
+      Tuesday: "7:00a - 2:00a",
+      Wednesday: "7:00a - 2:00a",
+      Thursday: "7:00a - 2:00a",
+      Friday: "7:00a - 11:00p",
+      Saturday: "9:00a - 11:00p"
+    },
+    location: "Commons"
+  },
+  {
+    name: "Starbucks Coffee - The Quad",
+    cuisine: "Coffee",
+    schedule: {
+      Sunday: "9:00a - 6:00p",
+      Monday: "7:00a - 8:00p",
+      Tuesday: "7:00a - 8:00p",
+      Wednesday: "7:00a - 8:00p",
+      Thursday: "7:00a - 8:00p",
+      Friday: "7:00a - 6:00p",
+      Saturday: "8:00a - 4:00p"
+    },
+    location: "The Quad"
+  },
+  {
+    name: "Houston Street Subs - Southside",
+    cuisine: "Subs",
+    schedule: {
+      Sunday: "2:00p - 8:00p",
+      Monday: "11:00a - 8:00p",
+      Tuesday: "11:00a - 8:00p",
+      Wednesday: "11:00a - 8:00p",
+      Thursday: "11:00a - 8:00p",
+      Friday: "11:00a - 8:00p",
+      Saturday: "11:00a - 8:00p"
+    },
+    location: "East Campus"
+  },
+  {
+    name: "Azimuth Cafe - Langford",
+    cuisine: "Cafe",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "7:30a - 3:00p",
+      Tuesday: "7:30a - 3:00p",
+      Wednesday: "7:30a - 3:00p",
+      Thursday: "7:30a - 3:00p",
+      Friday: "7:30a - 3:00p",
+      Saturday: "Closed"
+    },
+    location: "Langford"
+  },
+  {
+    name: "Food Truck Row",
+    cuisine: "Varied",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "11:00a - 2:00p",
+      Tuesday: "11:00a - 2:00p",
+      Wednesday: "11:00a - 2:00p",
+      Thursday: "11:00a - 2:00p",
+      Friday: "11:00a - 2:00p",
+      Saturday: "Closed"
+    },
+    location: "Various Locations"
+  },
+  {
+    name: "Houston Street Subs - Polo Garage",
+    cuisine: "Subs",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "8:00a - 3:00p",
+      Tuesday: "8:00a - 3:00p",
+      Wednesday: "8:00a - 3:00p",
+      Thursday: "8:00a - 3:00p",
+      Friday: "8:00a - 3:00p",
+      Saturday: "Closed"
+    },
+    location: "Polo Garage"
+  },
+  {
+    name: "Market at Polo Garage",
+    cuisine: "Convenience Store",
+    schedule: {
+      Sunday: "Closed",
+      Monday: "8:00a - 5:00p",
+      Tuesday: "8:00a - 5:00p",
+      Wednesday: "8:00a - 5:00p",
+      Thursday: "8:00a - 5:00p",
+      Friday: "8:00a - 3:00p",
+      Saturday: "Closed"
+    },
+    location: "Polo Garage"
+  }
   ];
 
   function isOpenNow(place) {
     const now = new Date();
+    const currentDay = now.toLocaleDateString("en-US", { weekday: "long" }); // Get current day (e.g., "Monday")
     const currentTime = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
-    return place.openTime <= currentTime && place.closeTime >= currentTime;
+  
+    // Get today's schedule
+    const todaySchedule = place.schedule[currentDay];
+  
+    if (todaySchedule === "Closed") {
+      return false; // Place is closed for the day
+    }
+  
+    // Split the schedule into individual time ranges
+    const timeRanges = todaySchedule.split(", ").map(range => range.trim());
+  
+    // Check if current time is within any of the time ranges
+    return timeRanges.some(range => {
+      const [start, end] = range.split(" - ").map(convertTo24Hour); // Convert times to 24-hour format
+      return start <= currentTime && end >= currentTime;
+    });
   }
-
+  
+  // Helper function to convert 12-hour time to 24-hour format
+  function convertTo24Hour(time) {
+    const [hourMinute, period] = [time.slice(0, -1), time.slice(-1)];
+    let [hour, minute] = hourMinute.split(":").map(Number);
+  
+    if (period === "p" && hour !== 12) hour += 12; // Add 12 hours for PM, except 12 PM
+    if (period === "a" && hour === 12) hour = 0; // Convert 12 AM to 00
+  
+    return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+  }
+  
   function displayPlaces(places) {
     const output = document.getElementById("output");
-    output.innerHTML = "";
-    console.log("in displayPlaces");
-    console.log(places)
-
+    output.innerHTML = ""; // Clear previous content
+  
+    // Sort places by rating in descending order
     const sortedPlaces = places.sort((a, b) => b.rating - a.rating);
-
-
+  
     sortedPlaces.forEach((place, index) => {
-      const isOpen = isOpenNow(place);
+      const isOpen = isOpenNow(place); // Check if the place is open
       const placeDiv = document.createElement("div");
       placeDiv.className = "info-box";
+      
+      // Construct the schedule HTML
+      let scheduleHTML = "<strong>Schedule:</strong><ul>";
+      for (const day in place.schedule) {
+        scheduleHTML += `<li><strong>${day}:</strong> ${place.schedule[day]}</li>`;
+      }
+      scheduleHTML += "</ul>";
+  
       placeDiv.innerHTML = `
         <h3>${index + 1}. ${place.name}</h3>
         <p><strong>Location:</strong> ${place.location}</p>
         <p><strong>Status:</strong> <span class="${isOpen ? 'open' : 'closed'}">${isOpen ? 'Open' : 'Closed'}</span></p>
+        <p><strong>Cuisine:</strong> ${place.cuisine}</p>
+        ${scheduleHTML}
       `;
       output.appendChild(placeDiv);
     });
   }
-
+  
+  
   document.addEventListener("DOMContentLoaded", () => {
-    displayPlaces(foodPlaces);
+    displayPlaces(foodPlaces); // Display all places on page load
   });
-
+  
   document.getElementById("searchButton").addEventListener("click", () => {
     const selectedCuisine = document.getElementById("cuisineDropdown").value.trim();
-
+  
+    // Filter places by selected cuisine
     const filteredPlaces = selectedCuisine
       ? foodPlaces.filter(
           place => place.cuisine.toLowerCase() === selectedCuisine.toLowerCase()
         )
       : foodPlaces;
-
-    displayPlaces(filteredPlaces);
+  
+    displayPlaces(filteredPlaces); // Display filtered places
   });
+  
