@@ -493,7 +493,7 @@ function displayPlaces(places) {
     return isOpenB - isOpenA; // Places that are open will appear first
   });
 
-  sortedPlaces.forEach(place => {
+  sortedPlaces.forEach((place, index) => {
     const isOpen = isOpenNow(place); // Determine if the place is open
     const placeDiv = document.createElement("div");
     placeDiv.className = "info-box";
@@ -505,7 +505,7 @@ function displayPlaces(places) {
     scheduleHTML += "</ul>";
 
     placeDiv.innerHTML = `
-      <h3>${place.name}</h3>
+      <h3> ${index + 1}. ${place.name}</h3>
       <p><strong>Location:</strong> ${place.location}</p>
       <p><strong>Status:</strong> <span class="${isOpen ? 'open' : 'closed'}">${isOpen ? 'Open' : 'Closed'}</span></p>
       <p><strong>Cuisine:</strong> ${place.cuisine}</p>
