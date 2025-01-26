@@ -7,12 +7,16 @@
   <title>Filter Food Places</title>
   <script src="foodoffcampus.js" defer></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-image: url('Images/s.png');
-      background-position: center top;
+      background-image: linear-gradient(to right, rgb(255, 233, 233), pink, rgb(255, 233, 233));
+      font-family: "Space Grotesk", serif;
 
     }
 
@@ -23,7 +27,6 @@
       padding: 20px;
       background: #420303;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .search-input {
@@ -49,7 +52,7 @@
       margin-left: 10px;
       border: none;
       border-radius: 8px;
-      background: linear-gradient(135deg, white, maroon);
+      background-color: maroon;
       color: white;
       font-weight: bold;
       cursor: pointer;
@@ -59,7 +62,8 @@
     }
 
     .search-button:hover {
-      background: linear-gradient(135deg, maroon, white);
+      background-color: white;
+      color: maroon;
       transform: scale(1.05);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
@@ -96,7 +100,7 @@
       font-size: 22px;
       padding: 10px;
       margin-bottom: 15px;
-      margin-top:0;
+      margin-top: 0;
       border-radius: 10px;
       color: white;
       text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
@@ -110,10 +114,10 @@
 
     #header {
       background-color: #420303;
-      padding: 10px;
+      padding: 15px;
+      position: absolute;
+      top: 0;
     }
-
-
   </style>
 </head>
 
@@ -122,28 +126,29 @@
   <div id="header">
     <button onclick="history.back()">&#9664;</button>
 
-    <div class="search-container">
+  </div>
 
-      <select id="cuisineDropdown" class="search-input">
-        <option value="">-- Select Cuisine --</option>
-        <option value="Fast Food">Fast Food</option>
-        <option value="Mexican">Mexican</option>
-        <option value="Mexican Fusion">Mexican Fusion</option>
-        <option value="Bar & Grill">Bar & Grill</option>
-        <option value="Bakery & Cafe">Bakery & Cafe</option>
-        <option value="Cajun">Cajun</option>
-        <option value="Burgers">Burgers</option>
-        <option value="Brewery & American">Brewery & American</option>
-        <option value="Italian">Italian</option>
-        <option value="French">French</option>
-        <option value="Barbecue">Barbecue</option>
-        <option value="Indian">Indian</option>
-        <option value="Korean">Korean</option>
-        <option value="Breakfast & Brunch">Breakfast & Brunch</option>
-        <option value="Pizza">Pizza</option>
-      </select>
-      <button id="searchButton" class="search-button">Search</button>
-    </div>
+  <div class="search-container">
+
+    <select id="cuisineDropdown" class="search-input">
+      <option value="">-- Select Cuisine --</option>
+      <option value="Fast Food">Fast Food</option>
+      <option value="Mexican">Mexican</option>
+      <option value="Mexican Fusion">Mexican Fusion</option>
+      <option value="Bar & Grill">Bar & Grill</option>
+      <option value="Bakery & Cafe">Bakery & Cafe</option>
+      <option value="Cajun">Cajun</option>
+      <option value="Burgers">Burgers</option>
+      <option value="Brewery & American">Brewery & American</option>
+      <option value="Italian">Italian</option>
+      <option value="French">French</option>
+      <option value="Barbecue">Barbecue</option>
+      <option value="Indian">Indian</option>
+      <option value="Korean">Korean</option>
+      <option value="Breakfast & Brunch">Breakfast & Brunch</option>
+      <option value="Pizza">Pizza</option>
+    </select>
+    <button id="searchButton" class="search-button">Search</button>
   </div>
 
   <div id="output"></div>
