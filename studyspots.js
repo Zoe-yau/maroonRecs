@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-const study = [
-    {name: "4th floor annex", },
-    {name: "ILCB", },
-    {name: "Zach", },
-    {name: "Annex 5th floor", },
-    {name: "Cushing Library" },
-    {name: "Quad bucks study rooms" },
-    {name: "Arch A"},
-
-];
-=======
 const studySpots = [
     // Libraries
 {
@@ -252,4 +240,3 @@ document.getElementById("filterButton").addEventListener("click", filterAndRankP
 
 // Initial display
 filterAndRankPlaces();
->>>>>>> e59747fca3734cb995a2182cec4d1dd1bf4f73d3
