@@ -50,7 +50,7 @@ rankedData.forEach((professor, index) => {
 
   // Add the professor's details as inner HTML
   infoDiv.innerHTML = `
-        <p id="rank">Rank: ${index + 1}</p>
+        <p id="rank">${index + 1}</p>
         <p id="instructor">Instructor: ${professor.Instructor}</p>
         <p id="class">Class: ${professor.section}</p>
         <p id="gpa">GPA: ${professor.GPA.toFixed(2)}</p>
