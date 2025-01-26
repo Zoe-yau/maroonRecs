@@ -10,7 +10,7 @@ const studySpots = [
 },
 {
     name: "Business Library & Collaboration Commons (BLCC)",
-    location: "Wehner Building (West Campus)",
+    location: "West Campus",
     weekdayHours: "7 AM - 12 AM",
     weekendHours: "12 PM - 12 AM",
     busiestTimes: "Weekday afternoons (3 PM - 7 PM)",
@@ -18,7 +18,7 @@ const studySpots = [
 },
 {
     name: "Policy Sciences & Economics Library (PSEL)",
-    location: "Bush School of Government & Public Service",
+    location: "West Campus",
     weekdayHours: "7:30 AM - 10 PM",
     weekendHours: "Closed",
     busiestTimes: "Mid-afternoons (2 PM - 5 PM)",
@@ -43,8 +43,8 @@ const studySpots = [
     emptiestTimes: "Early mornings (5 AM - 8 AM)",
 },
 {
-    name: "Aggie Honor Lounge",
-    location: "MSC (2nd Floor)",
+    name: "Aggie Honor Lounge - MSC",
+    location: "Central",
     weekdayHours: "8 AM - 10 PM",
     weekendHours: "Closed",
     busiestTimes: "Afternoons (12 PM - 4 PM)",
@@ -52,7 +52,7 @@ const studySpots = [
 },
 {
     name: "Commons Lobby",
-    location: "Southside",
+    location: "South Campus",
     weekdayHours: "24/7",
     weekendHours: "24/7",
     busiestTimes: "Evenings (5 PM - 10 PM)",
@@ -60,7 +60,7 @@ const studySpots = [
 },
 {
     name: "Rec Center Quiet Study Areas",
-    location: "Southside",
+    location: "South Campus",
     weekdayHours: "6 AM - 12 AM",
     weekendHours: "8 AM - 12 AM",
     busiestTimes: "Afternoons (3 PM - 8 PM)",
@@ -70,7 +70,7 @@ const studySpots = [
 // Academic Buildings
 {
     name: "Engineering Activity Building A (EABA)",
-    location: "Northside",
+    location: "North Campus",
     weekdayHours: "7 AM - 11 PM",
     weekendHours: "Closed",
     busiestTimes: "Late afternoons (4 PM - 8 PM)",
@@ -104,15 +104,15 @@ const studySpots = [
 },
 {
     name: "Sweet Eugene’s House of Java",
-    location: "Off-campus, Harvey Road",
+    location: "Off-campus",
     weekdayHours: "7 AM - 12 AM",
     weekendHours: "8 AM - 12 AM",
     busiestTimes: "Afternoons (1 PM - 5 PM)",
     emptiestTimes: "Early mornings (7 AM - 9 AM)",
 },
 {
-    name: "What’s the Buzz Coffee",
-    location: "MSC (Ground Floor)",
+    name: "What’s the Buzz Coffee - MSC",
+    location: "Central",
     weekdayHours: "7 AM - 7 PM",
     weekendHours: "Closed",
     busiestTimes: "Midday (11 AM - 3 PM)",
@@ -130,7 +130,7 @@ const studySpots = [
 },
 {
     name: "Aggie Park Pavilion",
-    location: "Near Kyle Field",
+    location: "Central",
     weekdayHours: "24/7",
     weekendHours: "24/7",
     busiestTimes: "Afternoons (1 PM - 6 PM)",
@@ -211,9 +211,10 @@ function filterAndRankPlaces() {
     const locationDropdown = document.getElementById("locationDropdown");
     const statusDropdown = document.getElementById("statusDropdown");
 
-    const selectedLocation = locationDropdown.value;
-    const selectedStatus = statusDropdown.value;
+    const selectedLocation = locationDropdown.value; // User-selected location
+    const selectedStatus = statusDropdown.value; // User-selected status (Open/Closed)
 
+    // Filter study spots based on location and status
     const filteredPlaces = studySpots.filter((place) => {
         const matchesLocation = selectedLocation === "All" || place.location === selectedLocation;
         const matchesStatus =
@@ -224,9 +225,13 @@ function filterAndRankPlaces() {
         return matchesLocation && matchesStatus;
     });
 
+    // Rank the filtered places by emptiness
     const rankedPlaces = rankPlacesByEmptiness(filteredPlaces);
+
+    // Display only the filtered and ranked places
     displayPlaces(rankedPlaces);
 }
+
 
 document.getElementById("filterButton").addEventListener("click", filterAndRankPlaces);
 
